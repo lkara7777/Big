@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Customer's type Predictor</title>
+  {% load static %}
+    <link rel="stylesheet" href="{% static 'main1.css' %}">
+    <style>
+     p    {font-size:18px;}
+     .inner {
+  margin-left: 20px;
+
+}
+     body {
+  background: url(https://www.itl.cat/pngfile/big/0-7371_pixabay-wood-background.jpg);background-size:100% 110%;text-indent: 20%;
+}
+button{indent: 20%;}
+.button4 {border-radius: 10px;}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+    </style>
+  </head>
+  <body style="background-color:darkSeaGreen">
+
+
+    <h1 style="color:#DAE0DE;"><b>Welcome to Peoplecert</b></h1>
+    <h2 style="color:#DAE0DE;"><p>Please fill in the following details so as to let you know what type of certification may interest you:</p></h2>
+  
+    <form name="myform" action="{% url 'result' %}">
+      {% csrf_token %}
+      <p style="color:white">NoTests
+      <input type="number" name="NoTests" min="0" required> <button type="button" class="button button4" onclick="buttonDetails()" style="background-color:orange;font-size:14px" >details</button>
+    <!--  <p style="color:#de6510">agegroup</p>
+      <input type="text" name="agegroup" required> <button type="button" onclick="buttonage()" style="background-color:orange;font-size:14px" >details</button>
+--></p>
+  <br>
+  <p>
+<label for="age" style="color:white">Choose agegroup:</label>
+ <select id="cars" name="agegroup">
+   <option value="30-">30-</option>
+   <option value="30-40">30-40</option>
+   <option value="40-50">40-50</option>
+   <option value="50+">50+</option>
+ </select></p><br>
+
+      <p style="color:white">Country
+      <input type="number" name="country" min="2" required> <button type="button" class="button button4" onclick="buttoncountry()" style="background-color:orange;font-size:14px" >details</button>
+</p>
+
+      <p><label for="type" style="color:white">Choose customer type:</label>
+       <select id="type" name="type">
+         <option value="B2C">B2C</option>
+         <option value="B2B">B2B</option>
+
+       </select> <button class="button button4" type="button" onclick="buttontype()" style="background-color:orange;font-size:14px" >details</button></p>
+       <br>
+
+       <p><label for="gender" style="color:white">Choose gender:</label>
+        <select id="gender" name="gender">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+
+        </select></p>
+<br>
+<p><label for="promo" style="color:white">Do you wish a promo discount?:</label>
+ <select id="promo" name="promo">
+   <option value="No">No</option>
+   <option value="Yes">Yes</option>
+
+ </select></p>
+ <br>
+        <p><label for="trainer" style="color:white">Are you a trainer?:</label>
+         <select id="trainer" name="trainer">
+           <option value="No">No</option>
+           <option value="Yes">Yes</option>
+
+         </select></p>
+
+
+
+         <br>
+    <div class="inner">  <input type="submit" class="button button4" value="Submit" style="background-color:orange; width:200px;heigth:300;font-weight: bold;">
+    </div>  <br>
+
+        <div class="inner">
+          <button class="button button4" type="button"  style="background-color:orange;font-size:14px" >
+       <button type="button" class="button button4" onclick="buttonAlert()" style="background-color:orange;font-size:14px;" >click for details</button>
+</div>
+    </form>
+
+
+  <script type="text/javascript" src="{% static 'main.js' %}"></script>
+  </body>
+</html>

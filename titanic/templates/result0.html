@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <!--{% load static %}
+    <link rel="stylesheet" href="{% static 'main1.css' %}">-->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'image.jpg' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon-16x16.png' %}">
+    <style>
+    body {
+ background: url(https://www.itl.cat/pngfile/big/0-7371_pixabay-wood-background.jpg);background-size:100% 130%;text-indent: 20%;
+}
+ p    {font-size:20px;
+      margin-left: 20px;
+      margin-right:40px;
+ }
+ .inner {
+margin-left: 20px;
+margin-right:40px;
+color:white;
+font-size:18px;
+
+}
+.myDIV {
+margin-left: 20px;
+
+margin-right:40px;
+color:white;
+font-size:18px;
+
+}
+body {
+  margin-left: 20px;
+  margin-right:40px;
+}
+#canv{vertical-align: top;
+display:inline;
+border: 5px solid orange;
+border-radius: 5%;
+margin-left: 25px;
+cursor: crosshair;}
+.button4 {border-radius: 10px;}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+
+
+
+    </head>
+  <body>
+
+        <h1 style="color:#DAE0DE;"><b>Results:</b></h1>
+        <br>
+          <div class="inner"><b>
+        According to the predicted model  {{prediction}}</b>
+        </div>
+        <br>
+        <br>
+          <div class="inner">
+      <button id="inner1" type="button" class="button button4" onclick="myFunction()" style="background-color:orange;font-size:18px">click for promo</button>
+    </div>
+
+    <br>
+    <div class="inner">
+
+    <p><b>In order to get the coupon please verify that you are not a robot, fill the number below:</b></p></div>
+      <br>
+      <br>
+  <div class="inner"><button id="inner1" type="button"  style="background-color:orange;font-size:18px;height:120px;width:40px">2</button>
+  <button id="inner" type="button"  style="background-color:orange;font-size:18px">+</button>
+  <button id="inner" type="button"  style="background-color:orange;font-size:18px;height:120px;width:40px">5</button>
+    <button id="inner" type="button"  style="background-color:orange;font-size:18px">=</button>
+
+
+  <!--  <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">
+<label for="file" style="cursor: pointer;">Upload Image</label>
+<img id="output" width="200" />
+
+<button type="button" onclick="buttonsave()" style="background-color:orange;font-size:14px">check answer</button>-->
+<canvas id="canv" width="120" height="120" style="background-color:#000000"></canvas>
+<button id="check" class="button button4" value="check">check</button>
+
+
+<script>
+
+loadModel();
+preparecanvas();
+document.getElementById('check').addEventListener('click',function(){
+predictimage();
+clearcanvas();
+});
+
+</script>
+
+</div>
+
+
+  <br>
+  <br>
+<div id="myDIV" style="font-size:20px"></div>
+
+
+    <br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+      <div class="inner">
+            <a href="{% url 'home' %}" style="color:white;">click for home page</a>  <a href="{% url 'analysis' %}" style="color:yellow;">Data analysis</a>
+        </div>
+        <div class="inner">
+        <a href="{% url 'analysisC' %}" style="color:yellow;">Data Analysis for Customer's country</a></div>
+      <script type="text/javascript" src="{% static 'main.js' %}"></script>
+
+      </body>
+</html>

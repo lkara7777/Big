@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!--{% load static %}
+    <link rel="stylesheet" href="{% static 'main1.css' %}">-->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'image.jpg' %}">
+    <style>
+    body {
+ background: url(https://www.itl.cat/pngfile/big/0-7371_pixabay-wood-background.jpg);background-size:100% 130%;text-indent: 20%;
+}
+ p    {font-size:18px;}
+ .inner {
+margin-left: 20px;
+color:white;
+font-size:18px;
+
+}
+</style>
+    </head>
+  <body>
+
+    <h1 style="color:#DAE0DE;"><b>Outcome:</b></h1>
+    <br>
+    <p>The group type that you belong is:<b> {{prediction}}</b></p>
+
+    <br>
+    <br>
+
+    <p><b>If you need more info please goto Peoplecert's site.</b> <a href="https://www.peoplecert.org/browse-certifications/">
+
+      <img src="{% static 'peoplecert.jpg' %}" alt="" style="border:2px solid green;width:240px;height:80px;""></a></p>
+
+
+
+<br>
+<p><b>Thank you for visiting our site.</b></p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+  <div class="inner">
+    <a href="{% url 'home' %}" style="color:white;">click for home page</a>  <a href="{% url 'analysis0' %}" style="color:yellow;">Data Analysis</a> <a href="{% url 'itil' %}" style="color:white;">click for ITIL</a></div>
+<br>
+
+  </body>
+</html>

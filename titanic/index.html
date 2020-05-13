@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Customer's type Predictor</title>
+  {% load static %}
+    <link rel="stylesheet" href="{% static 'image.jpg' %}">
+  </head>
+  <body style="background-color:darkSeaGreen">
+  <img src="{% static 'image.jpg' %} alt="No image" style="border:1px solid orange">
+    <h1><b>Welcome to Peoplecert</b></h1>
+    <h3><p>Please fill in the following details so as to let you know what type of certification may interest you:</p></h3>
+    <form action="{% url 'result' %}">
+      {% csrf_token %}
+      <p style="color:#de6510">NoTests</p>
+      <input type="text" name="NoTests"> <button type="button" onmouseover="buttonDetails()" style="background-color:orange;font-size:14px" >details</button>
+      <p style="color:#de6510">agegroup</p>
+      <input type="text" name="agegroup"> <button type="button" onmouseover="buttonage()" style="background-color:orange;font-size:14px" >details</button>
+      <p style="color:#de6510">country</p>
+      <input type="text" name="country"> <button type="button" onmouseover="buttoncountry()" style="background-color:orange;font-size:14px" >details</button>
+      <p style="color:#de6510">type</p>
+      <input type="text" name="type"> <button type="button" onmouseover="buttontype()" style="background-color:orange;font-size:14px" >details</button>
+      <p style="color:#de6510">gender</p>
+      <input type="text" name="gender"> <button type="button" onmouseover="buttongender()" style="background-color:orange;font-size:14px" >details</button>
+      <p style="color:#de6510">trainer</p>
+      <input type="text" name="trainer"> <button type="button" onmouseover="buttontrainer()" style="background-color:orange;font-size:14px" >details</button>
+
+
+      <input type="submit" style="background-color:orange; width:250px;heigth:200">
+
+
+    </form>
+    <br>
+    <br>
+      <button type="button" onclick="buttonAlert()" style="background-color:orange;font-size:14px" >click for details</button>
+  <script type="text/javascript" src="{% static 'main.js' %}"></script>
+  </body>
+</html>
