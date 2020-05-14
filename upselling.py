@@ -9,7 +9,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import GridSearchCV
 from sklearn.svm import SVC
 from sklearn.metrics import confusion_matrix
-import pandas_profiling as pp
+
 import seaborn as sns
 import pyodbc
 #----------------------------------------------------------------------------------------------------------
