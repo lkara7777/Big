@@ -18,24 +18,9 @@ import pyodbc
 #------connect to database--------------------------------------
 
 
-def connectToDDS():
-    if 'connDDS' not in globals():
-        global connDDS 
-        connDDS  = pyodbc.connect('Driver={SQL Server};'
-                          'Server=DESKTOP-O3VIQC2\SQLEXPRESS;'
-                          'Database=lkdataengineer;'
-                          'Trusted_Connection=yes;')
-        
-       
 
-        
-       
-    return connDDS
-query= """
-select * from dbo.clustering
-"""
-df = pd.read_sql(query, connectToDDS())
 
+df = pd.read_csv('pr1.csv',header=None)
 df.rename(columns={
                    0:'CandidateId',
                    1:'Brand',
