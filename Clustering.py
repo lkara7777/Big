@@ -10,7 +10,7 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.svm import SVC
 from sklearn.metrics import confusion_matrix
 import seaborn as sns
-#import pyodbc
+import pyodbc
 #-----------------------------------------------------------------------------------------------------------
 #cols=['Product Brand Name','Product Brand Nam','Product Family','Product Name','Country','Age','Sex']
 #df = pd.read_csv('pr1.csv',header=None)
@@ -18,9 +18,24 @@ import seaborn as sns
 #------connect to database--------------------------------------
 
 
+def connectToDDS():
+    if 'connDDS' not in globals():
+        global connDDS 
+        connDDS  = pyodbc.connect('Driver={SQL Server};'
+                          'Server=DESKTOP-O3VIQC2\SQLEXPRESS;'
+                          'Database=lkdataengineer;'
+                          'Trusted_Connection=yes;')
+        
+       
 
+        
+       
+    return connDDS
+query= """
+select * from dbo.clustering
+"""
+df = pd.read_sql(query, connectToDDS())
 
-df = pd.read_csv('pr1.csv',header=None)
 df.rename(columns={
                    0:'CandidateId',
                    1:'Brand',
@@ -154,7 +169,7 @@ plt.show()
 
 #----------------------------------
 
-
+print(pd.Series(y).value_counts())
 # Splitting the dataset into the Training set and Test set (20% of our data)
 
 #from sklearn.externals import joblib 
@@ -191,7 +206,7 @@ X_train, X_test, y_train, y_test = train_test_split(x, y,
 #X_train = sc.fit_transform(X_train)
 #X_test = sc.transform(X_test)
 
-
+from sklearn.externals import joblib 
 #model = RandomForestClassifier(n_estimators = 20, criterion = 'gini', random_state = 42)
 model = RandomForestClassifier(random_state = 1234,
                                 n_estimators = 100,criterion = 'entropy',
@@ -207,11 +222,17 @@ prediction=model.predict(X_test)
 sc1=model.score(X_test,y_test)
 print(sc1)
 #joblib.dump(model, 'randomforestmodel.sav')
-pickle.dump(model, open('randomforestmodel.sav', 'wb'))
-#joblib.dump(model, "randomforestmodel.sav")
+#pickle.dump(model, open('randomforestmodel.sav', 'wb'))
+joblib.dump(model, "randomforestmodel.sav")
 
 #predict new row
-
+df3 = pd.read_csv('IT3.csv',header=None)
+x=df3.iloc[:,0:].values
+print(x)
+t = sc.transform(x)
+print(t)
+pr=model.predict(t)
+print(pr)
 #classif.report
 import sklearn.metrics as mt
 report=mt.classification_report(y_test,prediction)
