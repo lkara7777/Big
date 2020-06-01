@@ -19,18 +19,11 @@ from . import views
 from . import views0
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.welcome,name='welcome'),
-    path('index/', views.index,name='index'),
+    path('home/', views.home,name='home'),
     path('result/', views.result,name='result'),
-    path('it/', views0.it,name='it'),
+    path('itil/', views0.itil,name='itil'),
     path('result0/', views0.result0,name='result0'),
     path('analysis/', views0.analysis,name='analysis'),
-    path('analysis1/', views0.analysis1,name='analysis1'),
     path('analysis0/', views0.analysis0,name='analysis0'),
-    path('hr/', views.hr,name='hr'),
-    path('hrresult/', views.hrresult,name='hrresult'),
-    path('hrranalysis/', views.hrranalysis,name='hrranalysis'),
-    path('hranalysismore/', views.hranalysismore,name='hranalysismore'),
-    path('sigmoid/', views.sigmoid,name='sigmoid'),
     path('analysisC/',views0.analysisC,name='analysisC')
 ]
