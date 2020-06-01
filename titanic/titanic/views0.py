@@ -5,25 +5,26 @@ import sys
 import traceback
 
 
-def itil(request):
-    return render(request,'itil.html')
+def it(request):
+    return render(request,'it.html')
+def analysis1(request):
+    return render(request,'analysis1.html')
 def result0(request):
-    try:
 
 
-        TestTaken=int(request.GET['TestTaken'])
-        AgeGroup=str(request.GET['AgeGroup'])
-        Country=int(request.GET['Country'])
-        DaysPast=int(request.GET['DaysPast'])
-        Type=str(request.GET['Type'])
-        Gender=str(request.GET['Gender'])
-        PromoFound=str(request.GET['PromoFound'])
-        Trainer=str(request.GET['Trainer'])
+
+    TestTaken=int(request.GET['TestTaken'])
+    AgeGroup=str(request.GET['AgeGroup'])
+    Country=int(request.GET['Country'])
+    DaysPast=int(request.GET['DaysPast'])
+    Type=str(request.GET['Type'])
+    Gender=str(request.GET['Gender'])
+    PromoFound=str(request.GET['PromoFound'])
+    Trainer=str(request.GET['Trainer'])
     #title=int(request.GET['title'])
-        prediction=model0.predict(TestTaken,AgeGroup,Country,DaysPast,Type,Gender,PromoFound,Trainer)
-        return render(request,'result0.html',{'prediction':prediction})
-    except Exception as e:
-        print("")
+    prediction=model0.predict(TestTaken,AgeGroup,Country,DaysPast,Type,Gender,PromoFound,Trainer)
+    return render(request,'result0.html',{'prediction':prediction})
+
     # Get current system exception
 def analysis(request):
     return render(request,'analysis.html')
