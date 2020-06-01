@@ -82,11 +82,35 @@ function clearcanvas(){
 function buttonAlert() {
   alert("When clicking the submit an algorithm will run to result what type of certification will propose according to your information given.");
 }
+function buttonAlerthr() {
+  alert("When clicking the submit an algorithm will run to result if the employee will leave or not.");
+}
 function buttonAlert0() {
   alert("When clicking the submit an algorithm will run to result if it is likely to continue with an advanced ITIL or not.");
 }
 function buttonDetails() {
-  alert("Write how many times you have given a test with Peoplecert, fulfil a number please.");
+  alert("Write how many times you have given a test, fulfil a number please.");
+}
+function buttonDetailshr() {
+  alert("Write in how many projects this employee had been participated.");
+}
+function buttonsatisfhr() {
+  alert("Write a decimal between 0 and 1.(0.89)");
+}
+function buttonhourshr() {
+  alert("Write in average how many hours he/she is working.");
+}
+function buttonaccidentshr() {
+  alert("Write how many accidents the employee had.");
+}
+function buttonpromohr() {
+  alert("Write how many promotions the employee had until now.");
+}
+function buttonyearshr() {
+  alert("Write how many years he/she is in the Company.");
+}
+function buttonevalhr() {
+  alert("Write a decimal between 0 and 1.");
 }
 function buttonage() {
   alert("Choose from the following groups: 30-, 30-40, 40-50,50+ .");
