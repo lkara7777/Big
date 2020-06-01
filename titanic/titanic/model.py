@@ -49,25 +49,27 @@ def predict(NoTests,agegroup,country,type,gender,promo,trainer):
         agegroup=3
     x=[[NoTests,agegroup,country,type,gender,promo,trainer]]
     randomforest=pickle.load(open('forestmodel.sav','rb'))
-    #randomforest=joblib.load("forestmodel.sav")
+    #randomforest=pickle.load("randomforestmodel.sav")
     prediction=randomforest.predict(x)
     if prediction==0:
-        prediction='ITIL'
-        prediction=prediction+", this means that you can try: ITIL 4, ITIL courses."
+        prediction='IT'
+        prediction=prediction+", this means that you can try: IT 5, IT courses."
     elif prediction==1:
 
         prediction='LANGUAGES'
-        prediction=prediction+", this means that you can try: AU TOMER TurkYet,CITY & GUILDS,enPro,ESPRO,IELTS,LANGUAGECERT ESOL,SELT courses."
+        prediction=prediction+", this means that you can try: Turk,CITY,Pro,ES,IE,ES,S courses."
 
 
 
     elif prediction==2:
         prediction='OTHER'
-        prediction=prediction+", this means that you can try:\n LSS,DMI,FUNDED,LEAN IT,Computer Skills,INSETE,Service Desk,COMPTIA,AMSIS,COBIT5ECDL,DEVOPS,CODING BOOTCAMP,HOTEL KEYS courses."
 
+        prediction=prediction+", this means that you can try:\n L,D,FUN,E,Computer Skills,I,Service,C,AM,CO,EC,DEV,COD,HOTEL courses."
+        #prediction=prediction+", this means that you can try:\n LSS,DMI,FUNDED,LEAN IT,Computer Skills,INSETE,Service Desk,COMPTIA,AMSIS,COBIT5ECDL,DEVOPS,CODING BOOTCAMP,HOTEL KEYS courses."
     elif prediction==3:
         prediction='PPM'
-        prediction=prediction+", this means that you can try:\n AgileSHIFT, \n RESILIA, PPM courses."
+        #prediction=prediction+", this means that you can try:\n AgileSHIFT, \n RESILIA, PPM courses."
+        prediction=prediction+", this means that you can try:\n A, \n R, P courses."
     else:
         prediction='error'
     return prediction
