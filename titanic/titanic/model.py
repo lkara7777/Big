@@ -1,6 +1,6 @@
 def predict(NoTests,agegroup,country,type,gender,promo,trainer):
     import pickle
-    from sklearn.externals import joblib
+    #from sklearn.externals import joblib
     if country=='Albania':
         country=2
     elif country=='Belgium':
@@ -48,8 +48,8 @@ def predict(NoTests,agegroup,country,type,gender,promo,trainer):
     elif agegroup=='50+':
         agegroup=3
     x=[[NoTests,agegroup,country,type,gender,promo,trainer]]
-    #randomforest=pickle.load(open('randomforestmodel.pkl','rb'))
-    randomforest=joblib.load("randomforestmodel.sav")
+    randomforest=pickle.load(open('forestmodel.sav','rb'))
+    #randomforest=joblib.load("forestmodel.sav")
     prediction=randomforest.predict(x)
     if prediction==0:
         prediction='ITIL'

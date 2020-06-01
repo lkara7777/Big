@@ -23,7 +23,7 @@ def result(request):
         prediction=prediction
         return render(request,'result.html',{'prediction':prediction})
     except Exception as e:
-        print(e.message)
+        #print(e.message)
 
 
     # Get current system exception
