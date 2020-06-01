@@ -5,12 +5,13 @@ import numpy as np
 from sklearn.preprocessing import LabelEncoder, StandardScaler, OneHotEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
-
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import GridSearchCV
 from sklearn.svm import SVC
 from sklearn.metrics import confusion_matrix
-
+import pandas_profiling as pp
 import seaborn as sns
-
+import pyodbc
 #----------------------------------------------------------------------------------------------------------
 
 #def connectToDDS():
@@ -232,7 +233,7 @@ X_train, X_test, y_train, y_test = train_test_split(x, y,
 #X_train = sc.fit_transform(X_train)
 #X_test = sc.transform(X_test)
 from sklearn.linear_model import LogisticRegression
-
+from sklearn.externals import joblib 
 model = RandomForestClassifier(n_estimators = 40, criterion = 'gini', random_state = 42)
 #model=LogisticRegression(random_state=0)
 model.fit(X_train,y_train)
@@ -240,10 +241,17 @@ prediction=model.predict(X_test)
 sc1=model.score(X_test,y_test)
 print(sc1)
 #joblib.dump(model, 'randomforestmodel.sav')
-pickle.dump(model, open('itil3.sav', 'wb'))
+#pickle.dump(model, open('randomforestmodel.sav', 'wb'))
+joblib.dump(model, "itil3model.sav")
 
-
-
+#predict new row
+df3 = pd.read_csv('ITIL3.csv',header=None)
+x=df3.iloc[:,0:].values
+print(x)
+#t = sc.transform(x)
+#print(t)
+pr=model.predict(x)
+print(pr)
 #classif.report
 
 import sklearn.metrics as mt

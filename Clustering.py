@@ -5,12 +5,36 @@ import numpy as np
 from sklearn.preprocessing import LabelEncoder, StandardScaler, OneHotEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
-
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import GridSearchCV
+from sklearn.svm import SVC
 from sklearn.metrics import confusion_matrix
 import seaborn as sns
+import pyodbc
+#-----------------------------------------------------------------------------------------------------------
+#cols=['Product Brand Name','Product Brand Nam','Product Family','Product Name','Country','Age','Sex']
+#df = pd.read_csv('pr1.csv',header=None)
+#print(df.columns)#30-,40-50
+#------connect to database--------------------------------------
 
 
-df = pd.read_csv('cluster1.csv',header=None)
+def connectToDDS():
+    if 'connDDS' not in globals():
+        global connDDS 
+        connDDS  = pyodbc.connect('Driver={SQL Server};'
+                          'Server=DESKTOP-O3VIQC2\SQLEXPRESS;'
+                          'Database=lkdataengineer;'
+                          'Trusted_Connection=yes;')
+        
+       
+
+        
+       
+    return connDDS
+query= """
+select * from dbo.clustering
+"""
+df = pd.read_sql(query, connectToDDS())
 
 df.rename(columns={
                    0:'CandidateId',
@@ -47,7 +71,27 @@ plt.ylabel('Number of Occurrences', fontsize=12)
 plt.xlabel('Product', fontsize=12)
 plt.savefig('plotmain.png')
 
-
+plt.figure(figsize=(10,6))
+sns.countplot(x = 'Type', hue = 'Brand', data = df, palette = 'magma')
+plt.title('Clustering')
+plt.savefig('CustomerType.png')
+plt.show()
+plt.figure(figsize=(10,6))
+sns.countplot(x = 'Trainer', hue = 'Brand', data = df, palette = 'Blues')
+plt.title('Clustering')
+plt.savefig('Trainer.png')
+plt.show()
+plt.figure(figsize=(10,6))
+sns.countplot(x = 'Promo', hue = 'Brand', data = df, palette = 'OrRd')
+plt.title('Clustering')
+plt.savefig('Promo.png')
+plt.show()
+plt.figure(figsize=(10,6))
+sns.countplot(x = 'Gender', hue = 'Brand', data = df, palette = 'magma')
+plt.title('Clustering')
+plt.savefig('Gender.png')
+plt.show()
+print('--------------------')
 
 
 df2['Gender'].replace(('Male','Female'),(0,1),inplace=True)
@@ -57,7 +101,13 @@ df2['Promo'].replace(('No','Yes'),(0,1),inplace=True)
 print(df2['Gender'].value_counts())
 print(df2['Brand'].value_counts())
 
-
+plt.figure(figsize=(10,6))
+df2['Country'].value_counts().sort_values(ascending=False).head(10).plot()
+plt.title('Countries')
+plt.ylabel('Count', fontsize=12)
+plt.xlabel('Countries', fontsize=12)
+plt.savefig('Countries.png')
+plt.show()
 
 df2['Country'].replace(('Afghanistan','Aland Islands','Albania','Algeria','American Samoa','Andorra','Angola','Anguilla','Antarctica','Antigua and Barbuda','Argentina','Armenia','Aruba','Australia',
    'Austria','Azerbaijan','Bahamas','Bahrain','Bangladesh','Barbados','Belarus','Belgium','Belize','Benin','Bermuda','Bhutan','Bolivia','Bosnia and Herzegovina','Botswana','Bouvet Island','Brazil',
@@ -92,46 +142,109 @@ df2=df2.dropna(subset=['Type'])
 df2=df2.dropna(subset=['Agegroup'])
 df2=df2.dropna(subset=['Agegroup'])
 
-
+plt.figure(figsize=(10,6))
+sns.countplot(x = 'Agegroup', hue = 'Brand', data = df, palette = 'Purples')
+plt.title('Clustering')
+plt.ylabel('Number of Occurrences', fontsize=12)
+plt.xlabel('Age Groups', fontsize=12)
+plt.savefig('AgeGroup.png')
+plt.show()
 
 df2['Agegroup'].replace(('30-','30-40','40-50','50+'),(0,1,2,3),inplace=True)
-
+#categorical=['Country']
+#df2=pd.get_dummies(df2,columns=categorical,drop_first=True)
 
 print(df2.shape)
 y=df2.iloc[:,0].values
 # Splitting the dataset into the Training set and Test set (20% of our data)
 x=df2.iloc[:,1:].values
 
+#-----plotting-------------
+#--------------------------------------------------------
+sns.pairplot(df2,hue='Brand',palette='Dark2')
+plt.savefig('paiplot.png')
+plt.show()
+
+
+
+#----------------------------------
+
+print(pd.Series(y).value_counts())
+# Splitting the dataset into the Training set and Test set (20% of our data)
+
+#from sklearn.externals import joblib 
+#import sklearn.metrics as mt
+#def Fitmodel(X_train,y_train,X_test,y_test,name,algorithm,gridSearchParams,cv):
+#    np.random.seed(10)
+#    grid=GridSearchCV(estimator=algorithm,param_grid=gridSearchParams,cv=cv,scoring='accuracy',verbose=1,n_jobs=-1)
+#    res=grid.fit(X_train,y_train)
+#    best=res.best_params_
+ #   pred=res.predict(X_test)
+#    print(best)
+#    print(mt.classification_report(y_test,pred))
+    
+    
+##from xgboost import XGBClassifier
+##param={'n_estimators':[50,100,150,200],'max_depth':[2,4,6]}
+#Fitmodel(X_train,y_train,X_test,y_test,'XGBoost',XGBClassifier(n_jobs=-1,objective='softprob'),param,cv=5)
+
+
+
 #---------------------------end-------------------------------------------
 sc = StandardScaler()
 x = sc.fit_transform(x)
-
-#print(pd.Series(y).value_counts())
+from imblearn.over_sampling import SMOTE
+se=SMOTE(random_state=42)
+x,y=se.fit_resample(x,y)
+print(pd.Series(y).value_counts())
 # Splitting the dataset into the Training set and Test set (20% of our data)
 X_train, X_test, y_train, y_test = train_test_split(x, y,
                                                     test_size=0.22,
                                                     random_state=0)
+# Feature Scaling
+#sc = StandardScaler()
+#X_train = sc.fit_transform(X_train)
+#X_test = sc.transform(X_test)
 
-
+from sklearn.externals import joblib 
 #model = RandomForestClassifier(n_estimators = 20, criterion = 'gini', random_state = 42)
 model = RandomForestClassifier(random_state = 1234,
                                 n_estimators = 100,criterion = 'entropy',
                                max_depth = 22, 
                                min_samples_split = 7,  min_samples_leaf = 1) 
+#model=SVC(kernel = 'linear', C = 1)
 
+#from sklearn.neighbors import KNeighborsClassifier 
+#model = KNeighborsClassifier(n_neighbors = 7)
 
 model.fit(X_train,y_train)
 prediction=model.predict(X_test)
 sc1=model.score(X_test,y_test)
 print(sc1)
+#joblib.dump(model, 'randomforestmodel.sav')
+#pickle.dump(model, open('randomforestmodel.sav', 'wb'))
+joblib.dump(model, "randomforestmodel.sav")
 
-pickle.dump(model, open('forestmodel.sav', 'wb'))
-#joblib.dump(model, "randomforestmodel.sav")
+#predict new row
+df3 = pd.read_csv('IT3.csv',header=None)
+x=df3.iloc[:,0:].values
+print(x)
+t = sc.transform(x)
+print(t)
+pr=model.predict(t)
+print(pr)
 #classif.report
 import sklearn.metrics as mt
 report=mt.classification_report(y_test,prediction)
 print('\nClassification Report:\n')
 print(report)
+plt.figure(figsize=(10,6))
+
+plt.bar(range(len(model.feature_importances_)), model.feature_importances_)
+
+plt.xticks(np.arange(9),list(df2.columns[1:]),rotation=90,rotation_mode='anchor',va='top')
+plt.title("Feature's importance")
+plt.savefig('features0.png')
 
 
 
