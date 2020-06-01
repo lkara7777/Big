@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>HR predictor</title>
+  {% load static %}
+    <link rel="stylesheet" href="{% static 'main1.css' %}">
+    <style>
+     p    {font-size:18px;}
+
+     body {
+  background: url(https://www.itl.cat/pngfile/big/0-7371_pixabay-wood-background.jpg);background-size:100% 110%;text-indent: 20%;
+}
+body{margin-left: 80px;
+
+
+}
+h1 {
+  text-shadow: 2px 2px 8px yellow;
+}
+button{indent: 20%;}
+.button4 {border-radius: 10px;}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.inner {
+margin-left: 90px;
+color:white;
+font-size:18px;
+
+}
+.inner1 {
+margin-left: 20px;
+color:white;
+font-size:16px;
+
+
+}
+
+    </style>
+  </head>
+  <body style="background-color:darkSeaGreen">
+
+
+    <h1 style="color:#DAE0DE;"><b>Product's life cycle</b></h1>
+<br>
+
+<div class="inner1">
+
+  <h3 style="color:yellow;"><b>We gather the sales of a product A for the period: 06/2017 - 04/2020. And we predict the sales of the product with the sigmoid function.</b></h3>
+    <h3 style="color:yellow;"><b>Blue line is consists from real data for every month and red line is constructed from the following function that predicted the sales'quantity:</b></h3>
+
+</div>
+<div class="inner"><b> y=75800/(1+ 404.4*exp(-0.306*t))</b> &nbsp;&nbsp;[1920 by Raymond Pearl]
+
+</div>
+<br>
+<div class="inner">
+  <img src="{% static 'sigmoidold.png' %}" alt="" style="border:2px solid green;width:420px;height:210px;">
+<img src="{% static 'rateold.png' %}" alt="" style="border:2px solid green;width:420px;height:210px;">
+</div>
+<div class="inner1">
+
+  <h3 style="color:yellow;"><b>Apparently, it is doing a very good job predicting the monthly sales' quantity.
+  Considering the rate of change in sales'quantity,<div style="color:yellow;margin-left: 5px;font-size:18px">
+    <b>product A has already reached the point of flatten out.Thus,decisions should have been taken to strengthen the product A or launch similar product.</b></div>
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="inner1">&#9758;
+    <a href="{% url 'welcome' %}" style="color:yellow;font-size:16px;">Welcome page</a></div>
+  <script type="text/javascript" src="{% static 'main.js' %}"></script>
+  </body>
+</html>

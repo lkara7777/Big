@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ML & Data Analysis</title>
+  {% load static %}
+    <link rel="stylesheet" href="{% static 'main1.css' %}">
+    <style>
+     p    {font-size:18px;}
+     .inner {
+  margin-left: 220px;
+
+}
+     body {
+  background: url(https://www.itl.cat/pngfile/big/0-7371_pixabay-wood-background.jpg);background-size:100% 110%;text-indent: 20%;
+}
+h1 {
+  text-shadow: 2px 2px 8px yellow;
+}
+.inner1 {
+margin-left: 20px;
+color:white;
+font-size:18px;
+
+}
+button{indent: 20%;}
+.button4 {border-radius: 10px;}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+th, td {
+  padding: 15px;
+  margin-left: 20px;
+
+}
+
+    </style>
+  </head>
+  <body style="background-color:darkSeaGreen">
+
+<br>
+    <h1 style="color:#DAE0DE;"><b>Welcome to Machine Learning and Exploratory Data Analysis</b></h1>
+    <br>
+      <br>
+        <br>
+
+            <br>
+              <br>
+                <div class="inner">
+              <table style="indent:20%">
+  <tr>
+    <th>  <img src="{% static 'hr1.jpg' %}" alt="" style="border:2px solid green;width:320px;height:160px;"> </th>
+    <th>   <img src="{% static 'up.jpg' %}" alt="" style="border:2px solid green;width:320px;height:160px;"> </th>
+
+  </tr>
+  <tr>
+    <td>&#9757;<a href="{% url 'hr' %}" style="color:yellow;">  click for HR predictor</a></td>
+    <td>&#9757;<a href="{% url 'it' %}" style="color:yellow;">  click for Upselling predictor</a></td>
+
+  </tr>
+  <tr>
+    <td>  <img src="{% static 'clusters.jpg' %}" alt="" style="border:2px solid green;width:320px;height:160px;"> </td>
+    <td> <img src="{% static 'productlifecycle.gif' %}" alt="" style="border:2px solid green;width:320px;height:160px;"> </td>
+
+  </tr>
+  <tr>
+    <td>&#9757;<a href="{% url 'index' %}" style="color:yellow;">  click for Customers' clustering</a></td>
+    <td>&#9757;<a href="{% url 'sigmoid' %}" style="color:yellow;">  predictor of life cycle of a product</a></td>
+
+  </tr>
+</table></div>
+
+
+
+                  <br>
+
+                    <div class="inner1" >Owner's email: lkarahountri777@gmail.com
+                    </div>
+  <script type="text/javascript" src="{% static 'main.js' %}"></script>
+  </body>
+</html>

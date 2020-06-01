@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>HR predictor</title>
+  {% load static %}
+    <link rel="stylesheet" href="{% static 'main1.css' %}">
+    <style>
+     p    {font-size:18px;}
+     .inner {
+  margin-left: 20px;
+
+}
+     body {
+  background: url(https://www.itl.cat/pngfile/big/0-7371_pixabay-wood-background.jpg);background-size:100% 110%;text-indent: 20%;
+}
+button{indent: 20%;}
+.button4 {border-radius: 10px;}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+    </style>
+  </head>
+  <body style="background-color:darkSeaGreen">
+
+
+    <h1 style="color:#DAE0DE;"><b>Human Resources Retention</b></h1>
+    <h2 style="color:#DAE0DE;"><p>Do you wish to predict who employee is going to leave? Please fill the question below and find out.</p></h2>
+
+    <form name="myform" action="{% url 'hrresult' %}">
+      {% csrf_token %}
+      <p style="color:white">Projects
+      <input type="number" name="projects" min="0" required> <button type="button" class="button button4" onclick="buttonDetailshr()" style="background-color:orange;font-size:14px" >details</button>
+    <!--  <p style="color:#de6510">agegroup</p>
+      <input type="text" name="agegroup" required> <button type="button" onclick="buttonage()" style="background-color:orange;font-size:14px" >details</button>
+--></p>
+<p style="color:white">Monthly Hours
+<input type="number" name="monthlyhours" min="0" required> <button type="button" class="button button4" onclick="buttonhourshr()" style="background-color:orange;font-size:14px" >details</button>
+<!--  <p style="color:#de6510">agegroup</p>
+<input type="text" name="agegroup" required> <button type="button" onclick="buttonage()" style="background-color:orange;font-size:14px" >details</button>
+--></p>
+<p style="color:white">Years in Company
+<input type="number" name="years" min="0" required> <button type="button" class="button button4" onclick="buttonyearshr()" style="background-color:orange;font-size:14px" >details</button>
+<!--  <p style="color:#de6510">agegroup</p>
+<input type="text" name="agegroup" required> <button type="button" onclick="buttonage()" style="background-color:orange;font-size:14px" >details</button>
+--></p>
+<p style="color:white">Accidents
+<input type="number" name="accidents" min="0" required> <button type="button" class="button button4" onclick="buttonaccidentshr()" style="background-color:orange;font-size:14px" >details</button>
+<!--  <p style="color:#de6510">agegroup</p>
+<input type="text" name="agegroup" required> <button type="button" onclick="buttonage()" style="background-color:orange;font-size:14px" >details</button>
+--></p>
+<p style="color:white">Promotions
+<input type="number" name="promotions" min="0" required> <button type="button" class="button button4" onclick="buttonpromohr()" style="background-color:orange;font-size:14px" >details</button>
+<!--  <p style="color:#de6510">agegroup</p>
+<input type="text" name="agegroup" required> <button type="button" onclick="buttonage()" style="background-color:orange;font-size:14px" >details</button>
+--></p>
+
+  <p>
+<label for="department" style="color:white">Choose department:</label>
+ <select id="cars" name="department">
+   <option value="sales">sales</option>
+   <option value="accounting">accounting</option>
+   <option value="hr">hr</option>
+   <option value="technical">technical</option>
+   <option value="support">support</option>
+   <option value="management">management</option>
+   <option value="IT">IT</option>
+   <option value="product_mng">product_mng</option>
+    <option value="marketing">marketing</option>
+     <option value="RandD">RandD</option>
+ </select></p>
+ <p>
+<label for="salary" style="color:white">Choose salary:</label>
+<select id="salary" name="salary">
+  <option value="low">low</option>
+  <option value="medium">medium</option>
+  <option value="high">high</option>
+
+
+</select></p>
+
+
+<p style="color:white">Satisfaction level
+<input type="decimal" name="satisfaction" min="0" max="1" required> <button type="button" class="button button4" onclick="buttonsatisfhr()" style="background-color:orange;font-size:14px" >details</button>
+<!--  <p style="color:#de6510">agegroup</p>
+<input type="text" name="agegroup" required> <button type="button" onclick="buttonage()" style="background-color:orange;font-size:14px" >details</button>
+--></p>
+<p style="color:white">Evaluation
+<input type="decimal" name="evaluation" min="0" max="1" required> <button type="button" class="button button4" onclick="buttonevalhr()" style="background-color:orange;font-size:14px" >details</button>
+<!--  <p style="color:#de6510">agegroup</p>
+<input type="text" name="agegroup" required> <button type="button" onclick="buttonage()" style="background-color:orange;font-size:14px" >details</button>
+--></p>
+<br>
+  <p>
+
+    <div class="inner">  <input type="submit" class="button button4" value="Submit" style="background-color:orange; width:200px;heigth:300;font-weight: bold;">
+    </div>  <br>
+
+        <div class="inner">
+          <button class="button button4" type="button"  style="background-color:orange;font-size:14px" >
+       <button type="button" class="button button4" onclick="buttonAlerthr()" style="background-color:orange;font-size:14px;" >click for details</button>
+</div>
+    </form>
+
+
+  <script type="text/javascript" src="{% static 'main.js' %}"></script>
+  </body>
+</html>

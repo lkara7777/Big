@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Data Analysis</title>
+    <!--{% load static %}
+    <link rel="stylesheet" href="{% static 'main1.css' %}">-->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'image.jpg' %}">
+    <style>
+
+    body {
+ background: url(https://s3-us-east-2.amazonaws.com/wp-prelogin/wp-content/uploads/2018/08/16100513/Big-data-azzurro.jpg);background-size:100% 100%;text-indent: 20%;
+}
+ p    {font-size:20px;
+      margin-left: 20px;
+      margin-right:40px;
+ }
+ h1 {
+   text-shadow: 2px 2px 8px yellow;
+ }
+ .inner {
+ margin-left: 590px;
+ color:white;
+ font-size:18px;
+
+ }
+ .inner1 {
+ margin-left: 420px;
+ color:white;
+ font-size:18px;
+
+ }
+
+}
+body {
+  margin-left: 450px;
+  margin-right:40px;
+}
+#myImg1,#myImg2,#myImg3 {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg1,#myImg2,#myImg3:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+.modal1-content,.modal2-content,.modal3-content,.modal4-content,.modal5-content,.modal6-content,.modal7-content,
+.modal8-content,.modal9-content,.modal10-content,.modal11-content,.modal12-content
+ {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption1,#caption2,#caption3,#caption4,#caption5,#caption6,#caption7,#caption8,#caption9,#caption10,#caption11,#caption12
+ {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal1-content, #caption1,.modal2-content, #caption2,.modal3-content, #caption3,.modal4-content, #caption4,.modal5-content, #caption5,.modal6-content, #caption6,
+.modal7-content, #caption7,.modal8-content, #caption8,.modal9-content, #caption9,.modal10-content, #caption10,.modal11-content, #caption11,.modal12-content, #caption12
+
+ {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)}
+  to {-webkit-transform:scale(1)}
+}
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close1,.close2,.close3,.close4,.close5,.close6,.close7,.close8,.close9,.close10,.close11,.close12 {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close1,.close2,.close3:hover,.close3,.close4,.close3:hover,.close4:hover,.close5,.close6,.close5:hover,.close6:hover,.close7,.close8,.close7:hover,.close8:hover,
+.close9,.close10,.close9:hover,.close10:hover,.close11,.close12,.close11:hover,.close12:hover,
+.close3:focus,.close2:focus,.close1:focus,.close4:focus,.close5:focus, .close6:focus,.close7:focus,.close8:focus,.close9:focus,.close10:focus,.close11:focus,.close12:focus,
+{
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal1-content,.modal2-content,.modal3-content,.modal4-content,.modal5-content,.modal6-content,
+  .modal7-content,.modal8-content,.modal9-content,.modal10-content,.modal11-content,.modal12-content,
+   {
+    width: 100%;
+  }
+}
+
+</style>
+
+
+
+    </head>
+  <body>
+
+        <h1  class="inner1" style="color:white;font-size:26px;"><b>Data Analysis of HR'S model: (continuation)</h1>
+
+        <b><h3 style="color:yellow;">
+      </h3>
+      </b>
+
+        <br>
+          <br>
+        <div class="inner">
+          <table style="indent:20%">
+<tr>
+<th>   <img id="myImg1" src="{% static 'hr_featuresold.png' %}" alt="Zoom" style="width:100%;max-width:260px" height="180px"></th>
+<th>   <img id="myImg2" src="{% static 'hr_lmplot_old2.png' %}" alt="Zoom" style="width:100%;max-width:260px" height="180px"></th>
+<th>   <img id="myImg3" src="{% static 'hr_lmplot_old.png' %}" alt="Zoom" style="width:100%;max-width:260px" height="180px"></th>
+</tr>
+<tr>
+<th style="color:yellow;font-size:16px;">employees more than 3 years</th><th style="color:yellow;height="80px""></th>
+</tr>
+<tr>
+<th>   <img id="myImg4" src="{% static 'hr_featuresnew.png' %}" alt="Zoom" style="width:100%;max-width:260px" height="180px"></th>
+<th>   <img id="myImg5" src="{% static 'hr_lmplot_new2.png' %}" alt="Zoom" style="width:100%;max-width:260px" height="180px"></th>
+<th>   <img id="myImg6" src="{% static 'hr_lmplot_new.png' %}" alt="Zoom" style="width:100%;max-width:260px" height="180px"></th>
+
+</tr>
+<tr>
+<th style="color:yellow;font-size:16px;">employees less than 3 years</th>
+
+</tr>
+</table>
+</div>
+  <br>
+  <div  class="inner1" style="color:yellow;">
+&#9889; For both categories the satisfactory level is the most important factor. But for the older employees the next 2 </div>
+  <div  class="inner1" style="color:yellow;">important are: monthly working hours and evaluation and for the newer
+are :the number of project that had </div>
+
+  <div  class="inner1" style="color:yellow;">participated and the monthly hours.
+</div>
+<br>
+<div  class="inner1" style="color:yellow;">
+&#9889; For both categories we see in scatter plots that the employees will leave for the same reasons, but for the   </div>
+<div  class="inner1" style="color:yellow;">newers, they may leave if they are medium satisfied and they work few hours and medium satisfied and they do  </div>
+
+<div  class="inner1" style="color:yellow;">not have good evaluation.
+</div>
+<br>
+<div  class="inner1" style="color:yellow;">
+&#9889; In addition, in olders, salary has more impact than in newers.</div>
+
+
+
+
+
+        <!--  <img id="myImg3" src="{% static 'hr_Salary.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+          <img id="myImg4" src="{% static 'hr_plotcorr.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+
+        </div>
+        <div><img id="myImg5" src="{% static 'hr_lmplot.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+           <img id="myImg6" src="{% static 'hr_timeincompany.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+           <img id="myImg7" src="{% static 'hr_catplot.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+              <img id="myImg8" src="{% static 'hr_joint.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+         </div>
+<div><img id="myImg9" src="{% static 'hr_scatter.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+  <img id="myImg10" src="{% static 'hr_scatter_eval.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+  <img id="myImg11" src="{% static 'heatmap.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+     <img id="myImg12" src="{% static 'hr_features.png' %}" alt="Zoom" style="width:100%;max-width:280px">-->
+   </div>
+
+   <br>
+     <br>
+
+
+        <!-- The Modal -->
+        <div id="myModal1" class="modal">
+          <span class="close1">&times;</span>
+          <img class="modal1-content" id="img01">
+          <div id="caption1"></div>
+        </div>
+        <div id="myModal2" class="modal">
+          <span class="close2">&times;</span>
+          <img class="modal2-content" id="img02">
+          <div id="caption2"></div>
+        </div>
+        <div id="myModal3" class="modal">
+          <span class="close3">&times;</span>
+          <img class="modal3-content" id="img03">
+          <div id="caption3"></div>
+        </div>
+        <div id="myModal4" class="modal">
+          <span class="close4">&times;</span>
+          <img class="modal4-content" id="img04">
+          <div id="caption4"></div>
+        </div>
+        <div id="myModal5" class="modal">
+          <span class="close5">&times;</span>
+          <img class="modal5-content" id="img05">
+          <div id="caption5"></div>
+        </div>
+        <div id="myModal6" class="modal">
+          <span class="close6">&times;</span>
+          <img class="modal6-content" id="img06">
+          <div id="caption6"></div>
+        </div>
+        <div id="myModal7" class="modal">
+          <span class="close7">&times;</span>
+          <img class="modal7-content" id="img07">
+          <div id="caption7"></div>
+        </div>
+        <div id="myModal8" class="modal">
+          <span class="close8">&times;</span>
+          <img class="modal8-content" id="img08">
+          <div id="caption8"></div>
+        </div>
+        <div id="myModal9" class="modal">
+          <span class="close9">&times;</span>
+          <img class="modal9-content" id="img09">
+          <div id="caption9"></div>
+        </div>
+        <div id="myModal10" class="modal">
+          <span class="close10">&times;</span>
+          <img class="modal10-content" id="img10">
+          <div id="caption10"></div>
+        </div>
+        <div id="myModal11" class="modal">
+          <span class="close11">&times;</span>
+          <img class="modal11-content" id="img11">
+          <div id="caption11"></div>
+        </div>
+        <div id="myModal12" class="modal">
+          <span class="close12">&times;</span>
+          <img class="modal12-content" id="img12">
+          <div id="caption12"></div>
+        </div>
+
+<br>
+<br>
+
+
+
+
+          <script>
+          var modal = document.getElementById("myModal1");
+
+          // Get the image and insert it inside the modal - use its "alt" text as a caption
+          var img = document.getElementById("myImg1");
+          var modalImg = document.getElementById("img01");
+          var captionText = document.getElementById("caption1");
+          img.onclick = function(){
+          modal.style.display = "block";
+          modalImg.src = this.src;
+          captionText.innerHTML = this.alt;
+          }
+          // Get the <span> element that closes the modal
+          var span = document.getElementsByClassName("close1")[0];
+
+          // When the user clicks on <span> (x), close the modal
+          span.onclick = function() {
+          modal.style.display = "none";
+          }
+
+
+          // Get the image and insert it inside the modal - use its "alt" text as a caption
+
+          img.onclick = function(){
+          modal.style.display = "block";
+          modalImg.src = this.src;
+          captionText.innerHTML = this.alt;
+          }
+      // Get the modal
+
+      var modal = document.getElementById("myModal2");
+
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+      var img = document.getElementById("myImg2");
+      var modalImg = document.getElementById("img02");
+      var captionText = document.getElementById("caption2");
+      img.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+      }
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close2")[0];
+      span.onclick = function() {
+      modal.style.display = "none";
+      }
+
+
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+
+      img.onclick = function(){
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+      }
+      var modal = document.getElementById("myModal3");
+
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+      var img = document.getElementById("myImg3");
+      var modalImg = document.getElementById("img03");
+      var captionText = document.getElementById("caption3");
+      img.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+      }
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close3")[0];
+      span.onclick = function() {
+      modal.style.display = "none";
+      }
+
+
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+
+      img.onclick = function(){
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+      }
+      var modal = document.getElementById("myModal4");
+
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+      var img = document.getElementById("myImg4");
+      var modalImg = document.getElementById("img04");
+      var captionText = document.getElementById("caption4");
+      img.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+      }
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close4")[0];
+      img.onclick = function(){
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+      }
+
+      // When the user clicks on <span> (x), close the modal
+
+      // When the user clicks on <span> (x), close the modal
+
+      // When the user clicks on <span> (x), close the modal
+
+      </script>
+      <div class="inner1">&#9758;
+          <a href="{% url 'welcome' %}" style="color:yellow;font-size:16px;">Welcome page</a></div>
+   </body>
+</html>

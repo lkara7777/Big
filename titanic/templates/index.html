@@ -14,6 +14,9 @@
      body {
   background: url(https://www.itl.cat/pngfile/big/0-7371_pixabay-wood-background.jpg);background-size:100% 110%;text-indent: 20%;
 }
+h1 {
+  text-shadow: 2px 2px 8px yellow;
+}
 button{indent: 20%;}
 .button4 {border-radius: 10px;}
 .button {
@@ -34,9 +37,9 @@ button{indent: 20%;}
   <body style="background-color:darkSeaGreen">
 
 
-    <h1 style="color:#DAE0DE;"><b>Welcome to Peoplecert</b></h1>
+    <h1 style="color:#DAE0DE;"><b>Customers' clustering</b></h1>
     <h2 style="color:#DAE0DE;"><p>Please fill in the following details so as to let you know what type of certification may interest you:</p></h2>
-  
+
     <form name="myform" action="{% url 'result' %}">
       {% csrf_token %}
       <p style="color:white">NoTests

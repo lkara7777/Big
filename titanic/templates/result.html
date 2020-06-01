@@ -18,25 +18,29 @@ color:white;
 font-size:18px;
 
 }
+h1 {
+  text-shadow: 2px 2px 8px yellow;
+  font-size:28px;
+}
 </style>
     </head>
   <body>
 
-    <h1 style="color:#DAE0DE;"><b>Outcome:</b></h1>
+    <h1 style="color:white;"><b>Model's outcome:</b></h1>
     <br>
-    <p>The group type that you belong is:<b> {{prediction}}</b></p>
+    <p style="color:white;font-size:20px;"><b>The group type that you belong is: {{prediction}}</b></p>
 
     <br>
     <br>
 
-    <p><b>If you need more info please goto Peoplecert's site.</b> <a href="https://www.peoplecert.org/browse-certifications/">
+    <p style="color:white;font-size:20px;"><b>If you need more info please goto our site.</b> <a href="https://www.peoplecert.org/browse-certifications/">
 
-      <img src="{% static 'peoplecert.jpg' %}" alt="" style="border:2px solid green;width:240px;height:80px;""></a></p>
+      <img src="{% static 'ML.jpg' %}" alt="" style="border:2px solid green;width:240px;height:80px;""></a></p>
 
 
 
 <br>
-<p><b>Thank you for visiting our site.</b></p>
+<p style="color:white;font-size:20px;"><b>Thank you for visiting our site.</b></p>
 <br>
 <br>
 <br>
@@ -44,8 +48,8 @@ font-size:18px;
 <br>
 <br>
 <br>
-  <div class="inner">
-    <a href="{% url 'home' %}" style="color:white;">click for home page</a>  <a href="{% url 'analysis0' %}" style="color:yellow;">Data Analysis</a> <a href="{% url 'itil' %}" style="color:white;">click for ITIL</a></div>
+  <div class="inner" style="font-size:18px">&#9758;
+      <a href="{% url 'it' %}" style="color:white;">Welcome page</a> <a href="{% url 'analysis0' %}" style="color:yellow;">Data Analysis</a>  <a href="{% url 'it' %}" style="color:white;">click for IT</a></div>
 <br>
 
   </body>

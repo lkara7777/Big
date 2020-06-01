@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!--{% load static %}
+    <link rel="stylesheet" href="{% static 'main1.css' %}">-->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'image.jpg' %}">
+    <style>
+    body {
+ background: url(https://www.itl.cat/pngfile/big/0-7371_pixabay-wood-background.jpg);background-size:100% 110%;text-indent: 20%;
+}
+ p    {font-size:18px;}
+ .inner {
+margin-left: 2px;
+color:white;
+font-size:18px;
+
+}
+h1 {
+  text-shadow: 2px 2px 8px yellow;
+}
+.button4 {border-radius: 10px;}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+    </head>
+  <body>
+    <h1 style="color:#DAE0DE;"><b>Upselling: IT</b></h1>
+    <h2 style="color:white;"><p>If you have given at least one certification of this category, please fill in the following details:</p></h2>
+<br>
+    <form name="myform" action="{% url 'result0' %}">
+      {% csrf_token %}
+      <p style="color:white">NoTests
+      <input type="number" name="TestTaken" min="0" required> <button type="button" class="button button4" onclick="buttonDetails()" style="background-color:orange;font-size:14px" >details</button>
+    <!--  <p style="color:#de6510">agegroup</p>
+      <input type="text" name="agegroup" required> <button type="button" onclick="buttonage()" style="background-color:orange;font-size:14px" >details</button>
+--></p>
+
+  <p>
+<label for="age" style="color:white">Choose agegroup:</label>
+ <select id="cars" name="AgeGroup">
+   <option value="30-">30-</option>
+   <option value="30-40">30-40</option>
+   <option value="40-50">40-50</option>
+   <option value="50+">50+</option>
+ </select></p>
+
+      <p style="color:white">Country
+      <input type="number" name="Country" min="2" required> <button type="button" class="button button4" onclick="buttoncountry()" style="background-color:orange;font-size:14px" >details</button>
+</p>
+
+<p style="color:white">How many days have pasted from your test?
+<input type="number" name="DaysPast" min="1" required> <button type="button" class="button button4" onclick="buttoncountry()" style="background-color:orange;font-size:14px" >details</button>
+</p>
+      <p><label for="type" style="color:white">Choose customer type:</label>
+       <select id="type" name="Type">
+         <option value="B2C">B2C</option>
+         <option value="B2B">B2B</option>
+
+       </select> <button type="button" class="button button4" onclick="buttontype()" style="background-color:orange;font-size:14px" >details</button></p>
+
+
+       <p><label for="Gender" style="color:white">Choose gender:</label>
+        <select id="Gender" name="Gender">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+
+        </select></p>
+
+<p><label for="PromoFound" style="color:white">Did you have a promo code for discount?</label>
+ <select id="PromoFound" name="PromoFound">
+   <option value="No">No</option>
+   <option value="Yes">Yes</option>
+
+ </select></p>
+        <p><label for="Trainer" style="color:white">Are you a trainer?:</label>
+         <select id="Trainer" name="Trainer">
+           <option value="No">No</option>
+           <option value="Yes">Yes</option>
+
+         </select></p>
+
+<br>
+         <br>
+    <div class="inner">  <input type="submit" value="Submit" class="button button4" style="background-color:orange; width:200px;heigth:300;font-weight: bold;">
+    </div>  <br>
+      <br>
+  <div class="inner">
+       <button type="button" class="button button4" onclick="buttonAlert0()" style="background-color:orange;font-size:14px;">click for details</button>
+</div>
+  </form>
+
+  <script type="text/javascript" src="{% static 'main.js' %}"></script>
+  </body>
+</html>

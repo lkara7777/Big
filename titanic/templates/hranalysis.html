@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -9,20 +10,22 @@
     <link rel="stylesheet" href="{% static 'image.jpg' %}">
     <style>
     body {
- background: url(https://www.itl.cat/pngfile/big/0-7371_pixabay-wood-background.jpg);background-size:100% 130%;text-indent: 20%;
+ background: url(https://www.saxonsit.com.au/blog/wp-content/uploads/2017/01/hr-tech-trends.jpg);background-size:100% 130%;text-indent: 20%;
 }
  p    {font-size:20px;
       margin-left: 20px;
       margin-right:40px;
  }
- h1 {
-   text-shadow: 2px 2px 8px yellow;
- }
+
 
 }
 body {
   margin-left: 20px;
   margin-right:40px;
+}
+
+h1 {
+  text-shadow: 2px 2px 8px yellow;
 }
 #myImg1,#myImg2,#myImg3 {
   border-radius: 5px;
@@ -120,39 +123,33 @@ body {
 </style>
 
 
-
     </head>
   <body>
 
-        <h1 style="color:#DAE0DE;"><b>Data Analysis of IT:</h1><h3 style="color:yellow;"> (Binary classification)</b></h3>
+    <h1 style="color:#DAE0DE;"><b>Data Analysis of HR'S model:</h1></b>
 
-        <b><p style="color:yellow;font-size:17px">
-        According to the predictive model for the product, what drives the decision of taking the advanced level of the product is depicted below:</p>
-      </b>
-      <b><p style="color:yellow;font-size:17px">
-      The most powerful factors/features are: number of tests taken and the gender of the candidate. An important notice is that features as: education level,</p>
+    <b><h3 style="color:yellow;">
+    According to the predicted model, see a serie of visuals that explain the influencing factors:</h3>
   </b>
-        <b><p style="color:yellow;font-size:17px">professional sector are missing.</p>
-    </b>
 
-        <br>
-        <div>
-          <img id="myImg1" src="{% static 'plot3.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
-          <img id="myImg2" src="{% static 'Countries.png' %}" alt="Zoom" style="width:100%;max-width:280px">
-          <img id="myImg3" src="{% static 'AgeGroup.png' %}" alt="Zoom" style="width:100%;max-width:280px">
-          <img id="myImg4" src="{% static 'CustomerType.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+    <br>
+    <div>
+      <img id="myImg1" src="{% static 'hr_plot.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+      <img id="myImg2" src="{% static 'hr_department.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+      <img id="myImg3" src="{% static 'hr_Salary.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+      <img id="myImg4" src="{% static 'hr_plotcorr.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
 
-        </div>
-        <div><img id="myImg5" src="{% static 'Trainer.png' %}" alt="Zoom" style="width:100%;max-width:280px">
-           <img id="myImg6" src="{% static 'PromoFound.png' %}" alt="Zoom" style="width:100%;max-width:280px">
-           <img id="myImg7" src="{% static 'Gender.png' %}" alt="Zoom" style="width:100%;max-width:280px">
-              <img id="myImg8" src="{% static 'TestTakenHist.png' %}" alt="Zoom" style="width:100%;max-width:280px">
-         </div>
-<div><img id="myImg9" src="{% static 'TestTakenDaysPast.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
-  <img id="myImg10" src="{% static 'Violin.png' %}" alt="Zoom" style="width:100%;max-width:280px">
-  <img id="myImg11" src="{% static 'heatmap.png' %}" alt="Zoom" style="width:100%;max-width:280px">
-     <img id="myImg12" src="{% static 'features.png' %}" alt="Zoom" style="width:100%;max-width:280px">
-   </div>
+    </div>
+    <div><img id="myImg5" src="{% static 'hr_lmplot.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+       <img id="myImg6" src="{% static 'hr_timeincompany.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+       <img id="myImg7" src="{% static 'hr_catplot.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+          <img id="myImg8" src="{% static 'hr_joint.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+     </div>
+<div><img id="myImg9" src="{% static 'hr_scatter.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+
+<img id="myImg11" src="{% static 'hr_features.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+ <!--<img id="myImg12" src="{% static 'hr_features.png' %}" alt="Zoom" style="width:100%;max-width:280px">-->
+</div>
         <!-- The Modal -->
         <div id="myModal1" class="modal">
           <span class="close1">&times;</span>
@@ -217,8 +214,8 @@ body {
 
 <br>
 <br>
-        <div class="inner" style="font-size:18px">&#9758;
-              <a href="{% url 'welcome' %}" style="color:white;">Welcome page</a>  <a href="{% url 'analysis1' %}" style="color:yellow;">Data analysis(cont.)</a>
+        <div class="inner" style> &#9755;
+              <a href="{% url 'welcome' %}" style="color:white;">click for welcome page</a>  <a href="{% url 'hranalysismore' %}" style="color:yellow;">Extended Analysis</a>
           </div>
 
 

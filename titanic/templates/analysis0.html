@@ -22,6 +22,9 @@ body {
   margin-left: 20px;
   margin-right:40px;
 }
+h1 {
+  text-shadow: 2px 2px 8px yellow;
+}
 #myImg1,#myImg2,#myImg3 {
   border-radius: 5px;
   cursor: pointer;
@@ -122,12 +125,12 @@ body {
     </head>
   <body>
 
-        <h1 style="color:#DAE0DE;"><b>Data Analysis of Clustering:</h1><h3> (Multi-class model)</b></h3>
-        <br>
-          <div class="inner"><b>
-        According to the predicted model for grouping Customers, see the results:
+        <h1 style="color:#DAE0DE;"><b>Data Analysis of Clustering:</h1><h3 style="color:yellow;"> (Multi-class model)</b></h3>
+
+          <b>
+    <h3 style="color:yellow;">  According to the predicted model for grouping Customers, see a serie of visuals that explain the influencing factors:</h3>
       </b>
-        </div>
+
         <br>
         <div>
           <img id="myImg1" src="{% static 'plotmain.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
@@ -142,7 +145,7 @@ body {
               <img id="myImg8" src="{% static 'Violin0.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
          </div>
 <div><img id="myImg9" src="{% static 'catplot.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
-  <img id="myImg10" src="{% static 'features0.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+  <img id="myImg10" src="{% static 'Tests.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
   <img id="myImg11" src="{% static 'heatmap0.png' %}" alt="Zoom" style="width:100%;max-width:280px">
      <img id="myImg12" src="{% static 'features0.png' %}" alt="Zoom" style="width:100%;max-width:280px">
    </div>
@@ -210,8 +213,8 @@ body {
 
 <br>
 <br>
-        <div class="inner">
-              <a href="{% url 'home' %}" style="color:white;">click for home page</a>
+        <div class="inner" style="font-size:18px">&#9758;
+              <a href="{% url 'welcome' %}" style="color:white;">Welcome page</a>
           </div>
 
 
