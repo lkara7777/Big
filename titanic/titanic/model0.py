@@ -1,7 +1,7 @@
 def predict(TestTaken,AgeGroup,Country,DaysPast,Type,Gender,PromoFound,Trainer):
     import pickle
-    from sklearn.externals import joblib
-    from keras.models import load_model
+    #from sklearn.externals import joblib
+    #from keras.models import load_model
     from sklearn.preprocessing import StandardScaler
 
 
@@ -33,15 +33,15 @@ def predict(TestTaken,AgeGroup,Country,DaysPast,Type,Gender,PromoFound,Trainer):
     elif AgeGroup=='50+':
         AgeGroup=3
     x=[[TestTaken,AgeGroup,Country,DaysPast,Type,Gender,PromoFound,Trainer]]
-    #randomforest=pickle.load(open('randomforestmodel.pkl','rb'))
-    itil3model=joblib.load("itil3model.sav")
+    itil3model=pickle.load(open('itil3.sav','rb'))
+    #itil3model=joblib.load("itil3model.sav")
     #itil3model=load.model("itil3model.h5")
 
 
     prediction=itil3model.predict(x)
     if prediction==0:
-        prediction='you are thinking not to move on with the next level'
-        prediction=prediction+", but special for you there is a discount coupon so as to think again."
+        prediction='you are not thinking to move on with the next level'
+        prediction=prediction+", but for you there is a discount coupon so as to think again."
     elif prediction==1:
         prediction='you are thinking to move on with the next level,'
         prediction=prediction+ ' so in order to finalize your decision, we offer a discount coupon.'
