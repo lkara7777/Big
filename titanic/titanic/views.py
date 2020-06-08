@@ -21,12 +21,6 @@ def sigmoid(request):
         return render(request,'sigmoid.html')
 def result(request):
 
-
-
-    #try:
-
-
-
     NoTests=int(request.GET['NoTests'])
 
     country=request.GET['country']
