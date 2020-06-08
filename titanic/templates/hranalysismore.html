@@ -145,28 +145,21 @@ body {
 
         <br>
           <br>
-        <div class="inner">
-          <table style="indent:20%">
-<tr>
-<th>   <img id="myImg1" src="{% static 'hr_featuresold.png' %}" alt="Zoom" style="width:100%;max-width:260px" height="180px"></th>
-<th>   <img id="myImg2" src="{% static 'hr_lmplot_old2.png' %}" alt="Zoom" style="width:100%;max-width:260px" height="180px"></th>
-<th>   <img id="myImg3" src="{% static 'hr_lmplot_old.png' %}" alt="Zoom" style="width:100%;max-width:260px" height="180px"></th>
-</tr>
-<tr>
-<th style="color:yellow;font-size:16px;">employees more than 3 years</th><th style="color:yellow;height="80px""></th>
-</tr>
-<tr>
-<th>   <img id="myImg4" src="{% static 'hr_featuresnew.png' %}" alt="Zoom" style="width:100%;max-width:260px" height="180px"></th>
-<th>   <img id="myImg5" src="{% static 'hr_lmplot_new2.png' %}" alt="Zoom" style="width:100%;max-width:260px" height="180px"></th>
-<th>   <img id="myImg6" src="{% static 'hr_lmplot_new.png' %}" alt="Zoom" style="width:100%;max-width:260px" height="180px"></th>
+          <div class="inner1">
+            <img id="myImg1" src="{% static 'hr_featuresold.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+            <img id="myImg2" src="{% static 'satisf-hours(2-3left).png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+            <img id="myImg3" src="{% static 'satisf-eval(2-3left).png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
 
-</tr>
-<tr>
-<th style="color:yellow;font-size:16px;">employees less than 3 years</th>
 
-</tr>
-</table>
-</div>
+          </div>
+<div class="inner1" style="color:yellow;font-size:16px;">employees more than 3 years</div>
+          <div class="inner1"><img id="myImg4" src="{% static 'hr_featuresnew.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+             <img id="myImg5" src="{% static 'satisf-hours(4-6left).png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+             <img id="myImg6" src="{% static 'satisf-eval(4-6left).png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+
+           </div>
+<div class="inner1" style="color:yellow;font-size:16px;">employees less than 3 years</div>
+
   <br>
   <div  class="inner1" style="color:yellow;">
 &#9889; For both categories the satisfactory level is the most important factor. But for the older employees the next 2 </div>
@@ -177,10 +170,12 @@ are :the number of project that had </div>
 </div>
 <br>
 <div  class="inner1" style="color:yellow;">
-&#9889; For both categories we see in scatter plots that the employees will leave for the same reasons, but for the   </div>
-<div  class="inner1" style="color:yellow;">newers, they may leave if they are medium satisfied and they work few hours and medium satisfied and they do  </div>
+&#9889; In the previous page, there is a chart that  shows that employees are leaving until the 6th year in company.</div>
+<div  class="inner1" style="color:yellow;">Here, we see that newers are leaving when ther are relatively satisfied but working few hours and with medium  </div>
 
-<div  class="inner1" style="color:yellow;">not have good evaluation.
+<div  class="inner1" style="color:yellow;">evaluation and quite satisfied. And for the employees with 4-6 years in company, we see that they leaving with </div>
+  <div  class="inner1" style="color:yellow;">high evaluation and low satisfaction, there is a category that they have high evaluation and satisfaction but they</div>
+    <div  class="inner1" style="color:yellow;">leaving. Also, they leaving having a lot of working hours and relatively satisfied.</div>
 </div>
 <br>
 <div  class="inner1" style="color:yellow;">
@@ -240,36 +235,8 @@ are :the number of project that had </div>
           <img class="modal6-content" id="img06">
           <div id="caption6"></div>
         </div>
-        <div id="myModal7" class="modal">
-          <span class="close7">&times;</span>
-          <img class="modal7-content" id="img07">
-          <div id="caption7"></div>
-        </div>
-        <div id="myModal8" class="modal">
-          <span class="close8">&times;</span>
-          <img class="modal8-content" id="img08">
-          <div id="caption8"></div>
-        </div>
-        <div id="myModal9" class="modal">
-          <span class="close9">&times;</span>
-          <img class="modal9-content" id="img09">
-          <div id="caption9"></div>
-        </div>
-        <div id="myModal10" class="modal">
-          <span class="close10">&times;</span>
-          <img class="modal10-content" id="img10">
-          <div id="caption10"></div>
-        </div>
-        <div id="myModal11" class="modal">
-          <span class="close11">&times;</span>
-          <img class="modal11-content" id="img11">
-          <div id="caption11"></div>
-        </div>
-        <div id="myModal12" class="modal">
-          <span class="close12">&times;</span>
-          <img class="modal12-content" id="img12">
-          <div id="caption12"></div>
-        </div>
+
+
 
 <br>
 <br>
@@ -376,7 +343,60 @@ are :the number of project that had </div>
       modalImg.src = this.src;
       captionText.innerHTML = this.alt;
       }
+      var modal = document.getElementById("myModal5");
 
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+      var img = document.getElementById("myImg5");
+      var modalImg = document.getElementById("img05");
+      var captionText = document.getElementById("caption5");
+      img.onclick = function(){
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+      }
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close5")[0];
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+      modal.style.display = "none";
+      }
+
+
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+
+      img.onclick = function(){
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+      }
+      var modal = document.getElementById("myModal6");
+
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+      var img = document.getElementById("myImg6");
+      var modalImg = document.getElementById("img06");
+      var captionText = document.getElementById("caption6");
+      img.onclick = function(){
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+      }
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close6")[0];
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+      modal.style.display = "none";
+      }
+
+
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+
+      img.onclick = function(){
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+      }
       // When the user clicks on <span> (x), close the modal
 
       // When the user clicks on <span> (x), close the modal

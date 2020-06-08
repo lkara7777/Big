@@ -15,6 +15,7 @@
       margin-left: 20px;
       margin-right:40px;
  }
+
  h1 {
    text-shadow: 2px 2px 8px yellow;
  }
@@ -23,6 +24,9 @@
 body {
   margin-left: 20px;
   margin-right:40px;
+}
+div.a {
+  line-height: normal;
 }
 #myImg1,#myImg2,#myImg3 {
   border-radius: 5px;
@@ -126,26 +130,42 @@ body {
 
         <h1 style="color:#DAE0DE;"><b>Data Analysis of IT:</h1><h3 style="color:yellow;"> (Binary classification)</b></h3>
 
-        <b><p style="color:yellow;font-size:17px">
-        According to the predictive model for the product, what drives the decision of taking the advanced level of the product is depicted below:</p>
-      </b>
-      <b><p style="color:yellow;font-size:17px">
-      The most powerful factors/features are: number of tests taken and the gender of the candidate. An important notice is that features as: education level,</p>
-  </b>
-        <b><p style="color:yellow;font-size:17px">professional sector are missing.</p>
-    </b>
+
 
         <br>
         <div>
           <img id="myImg1" src="{% static 'lmplot.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
-          <img id="myImg2" src="{% static 'catplot1.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+          <img id="myImg2" src="{% static 'daypast-test.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
         <!--  <img id="myImg3" src="{% static 'AgeGroup.png' %}" alt="Zoom" style="width:100%;max-width:280px">
           <img id="myImg4" src="{% static 'CustomerType.png' %}" alt="Zoom" style="width:100%;max-width:280px">-->
 
         </div>
+        <b><div class="a" style="color:yellow;font-size:17px">
+        Running the model again for different countries(USA,Germany,India, all the others),we conclude:</div>
+      </b>
+      <b><div class="a" style="color:yellow;font-size:17px">
+      In all cases the number of Tests is most powerful feature.But the next important ones per country are: </div>
+    </b><br>
 
-<div>
-   </div>
+      <div class="a" style="color:white;font-size:17px">
+      <b>Germany[Gender,Daypast]</b></div>
+      <div class="a" style="color:white;font-size:17px">
+        <b>USA[none]</b></div>
+        <div class="a" style="color:white;font-size:17px">
+          <b>India [Gender,Dayspast]</b></div>
+          <div class="a" style="color:white;font-size:17px">
+            <b>other countries [Dayspast]</b></div><br>
+
+            <div>
+              <img id="myImg3" src="{% static 'featuresg.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+              <img id="myImg4" src="{% static 'featuresus.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+              <img id="myImg5" src="{% static 'featuresind.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+              <img id="myImg6" src="{% static 'featuresoth.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+            <!--  <img id="myImg3" src="{% static 'AgeGroup.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+              <img id="myImg4" src="{% static 'CustomerType.png' %}" alt="Zoom" style="width:100%;max-width:280px">-->
+
+            </div>
+
         <!-- The Modal -->
         <div id="myModal1" class="modal">
           <span class="close1">&times;</span>
@@ -192,6 +212,7 @@ body {
           <img class="modal9-content" id="img09">
           <div id="caption9"></div>
         </div>
+
 
 
 <br>
@@ -328,6 +349,45 @@ body {
       }
       // Get the <span> element that closes the modal
       var span = document.getElementsByClassName("close9")[0];
+      var modal = document.getElementById("myModal10");
+
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+      var img = document.getElementById("myImg10");
+      var modalImg = document.getElementById("img10");
+      var captionText = document.getElementById("caption10");
+      img.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+      }
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close10")[0];
+      var modal = document.getElementById("myModal1");
+
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+      var img = document.getElementById("myImg11");
+      var modalImg = document.getElementById("img11");
+      var captionText = document.getElementById("caption11");
+      img.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+      }
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close11")[0];
+      var modal = document.getElementById("myModal12");
+
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+      var img = document.getElementById("myImg12");
+      var modalImg = document.getElementById("img12");
+      var captionText = document.getElementById("caption12");
+      img.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+      }
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close12")[0];
 
       // When the user clicks on <span> (x), close the modal
       span.onclick = function() {
