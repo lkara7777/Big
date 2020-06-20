@@ -78,6 +78,11 @@ function clearcanvas(){
   previousY=0;
   context.fillRect(0,0,canvas.clientWidth,canvas.clientHeight);
 }
+function showProgressCursor()
+{
+   $("#progressMessageLbl").html("Loading....");
+   $("#progressMessage").show();
+}
 
 function buttonAlert() {
   alert("When clicking the submit an algorithm will run to result what type of certification will propose according to your information given.");
@@ -87,6 +92,21 @@ function buttonAlerthr() {
 }
 function buttonAlert0() {
   alert("When clicking the submit an algorithm will run to result if it is likely to continue with an advanced ITIL or not.");
+}
+function buttoncar() {
+  alert("When clicking the submit ANN will run to result what value will pay for the car.");
+}
+function buttonaged() {
+  alert("Write your age, decimal or integer.");
+}
+function buttonsalary() {
+  alert("Write your annual salary.");
+}
+function buttondebt() {
+  alert("Write your credit card debt in dollars.");
+}
+function buttonworth() {
+  alert("Write your net worth in dollars.");
 }
 function buttonDetails() {
   alert("Write how many times you have given a test, fulfil a number please.");
