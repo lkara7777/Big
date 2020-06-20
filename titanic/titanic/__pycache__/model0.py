@@ -50,9 +50,3 @@ def predict(TestTaken,AgeGroup,Country,DaysPast,Type,Gender,PromoFound,Trainer):
     else:
         prediction='error'
     return prediction
-def predictt(gender,age,salary,debt,worth):
-    carmodel=pickle.load(open('cars.sav','rb'))
-
-
-
-    prediction=itil3model.predict(x)

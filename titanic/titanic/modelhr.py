@@ -38,7 +38,7 @@ def predict(projects,monthlyhours,years,accidents,promotions,department,salary,s
 
     elif prediction==1:
 
-        prediction='Unfortunately, the employee is going to leave, take action if you do not wish to lose him/her.'
+        prediction='Unfortunately, the employee is going to leave, take action if you do not want to get his/her resignation.'
 
 
 

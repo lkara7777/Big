@@ -1,12 +1,33 @@
 from django.shortcuts import render
 from . import model0
 from . import modelc
+from . import modelcar
 import sys
 import traceback
+from decimal import Decimal
 
 
 def it(request):
     return render(request,'it.html')
+def ann(request):
+    return render(request,'ann.html')
+def prophet(request):
+    return render(request,'prophet.html')
+def orders(request):
+    return render(request,'orders.html')
+def annresult(request):
+
+    gender=int(request.GET['gender'])
+    age=Decimal(request.GET['age'])
+    salary=Decimal(request.GET['salary'])
+    debt=Decimal(request.GET['debt'])
+    worth=Decimal(request.GET['worth'])
+
+
+    #title=int(request.GET['title'])
+    prediction=modelcar.predict(gender,age,salary,debt,worth)
+    return render(request,'annresult.html',{'prediction':prediction})
+
 def analysis1(request):
     return render(request,'analysis1.html')
 def result0(request):
