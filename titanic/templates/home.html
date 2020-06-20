@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>ML & Data Analysis</title>
   {% load static %}
     <link rel="stylesheet" href="{% static 'main1.css' %}">
@@ -11,8 +11,19 @@
   margin-left: 220px;
 
 }
-     body {
-  background: url(https://www.itl.cat/pngfile/big/0-7371_pixabay-wood-background.jpg);background-size:100% 110%;text-indent: 20%;
+
+#background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: -1; /* Ensure div tag stays behind content; -999 might work, too. */
+}
+
+.stretch {
+    width:100%;
+    height:100%;
 }
 h1 {
   text-shadow: 2px 2px 8px yellow;
@@ -23,6 +34,8 @@ color:white;
 font-size:18px;
 
 }
+
+
 button{indent: 20%;}
 .button4 {border-radius: 10px;}
 .button {
@@ -47,35 +60,39 @@ th, td {
   </head>
   <body style="background-color:darkSeaGreen">
 
+
+    <div id="background">
+        <img src="{% static 'wood.jpg' %}" class="stretch" alt="" />
+    </div>
 <br>
-    <h1 style="color:#DAE0DE;"><b>Welcome to Machine Learning and Exploratory Data Analysis</b></h1>
+    <h1 style="color:#DAE0DE; margin-left: 250px;"><b>Welcome to Machine Learning and Exploratory Data Analysis</b></h1>
     <br>
       <br>
         <br>
 
-        
 
-                <div class="inner">
+
+                <div class="inner" style="margin-left: 250px;">
               <table style="indent:20%">
   <tr>
     <th>  <img src="{% static 'hr1.jpg' %}" alt="" style="border:2px solid green;width:360px;height:180px;"> </th>
     <th>   <img src="{% static 'up.jpg' %}" alt="" style="border:2px solid green;width:360px;height:180px;"> </th>
-
+  <th>   <img src="{% static 'ann1.jpeg' %}" alt="" style="border:2px solid green;width:360px;height:180px;"> </th>
   </tr>
   <tr>
     <td>&#9757;<a href="{% url 'hr' %}" style="color:yellow;">  click for HR predictor</a></td>
     <td>&#9757;<a href="{% url 'it' %}" style="color:yellow;">  click for Upselling predictor</a></td>
-
+  <td>&#9757;<a href="{% url 'ann' %}" style="color:yellow;">  click for car's value predictor(ANN)</a></td>
   </tr>
   <tr>
     <td>  <img src="{% static 'clusters.jpg' %}" alt="" style="border:2px solid green;width:360px;height:180px;"> </td>
     <td> <img src="{% static 'productlifecycle.gif' %}" alt="" style="border:2px solid green;width:360px;height:180px;"> </td>
-
+<td> <img src="{% static 'time3.jpg' %}" alt="" style="border:2px solid green;width:360px;height:180px;"> </td>
   </tr>
   <tr>
     <td>&#9757;<a href="{% url 'index' %}" style="color:yellow;">  click for Customers' clustering</a></td>
     <td>&#9757;<a href="{% url 'sigmoid' %}" style="color:yellow;">  predictor of life cycle of a product</a></td>
-
+  <td>&#9757;<a href="{% url 'prophet' %}" style="color:yellow;">  forecast with time series</a></td>
   </tr>
 </table></div>
 
@@ -83,7 +100,7 @@ th, td {
 
                   <br>
 
-                    <div class="inner1" >Owner's email: lkarahountri777@gmail.com
+                    <div class="inner1" style="margin-left: 270px;">Owner's email: lkarahountri777@gmail.com
                     </div>
   <script type="text/javascript" src="{% static 'main.js' %}"></script>
   </body>

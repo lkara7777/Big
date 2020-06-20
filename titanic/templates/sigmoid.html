@@ -8,12 +8,23 @@
     <style>
      p    {font-size:18px;}
 
-     body {
-  background: url(https://www.itl.cat/pngfile/big/0-7371_pixabay-wood-background.jpg);background-size:100% 110%;text-indent: 20%;
+
+body{margin-left: 240px;
+
+
 }
-body{margin-left: 80px;
+#background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: -1; /* Ensure div tag stays behind content; -999 might work, too. */
+}
 
-
+.stretch {
+    width:100%;
+    height:100%;
 }
 h1 {
   text-shadow: 2px 2px 8px yellow;
@@ -49,7 +60,9 @@ font-size:16px;
     </style>
   </head>
   <body style="background-color:darkSeaGreen">
-
+    <div id="background">
+        <img src="{% static 'wood.jpg' %}" class="stretch" alt="" />
+    </div>
 
     <h1 style="color:#DAE0DE;"><b>Product's life cycle</b></h1>
 <br>

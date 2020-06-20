@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!--{% load static %}
+    <link rel="stylesheet" href="{% static 'main1.css' %}">-->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'image.jpg' %}">
+    <style>
+
+ p    {font-size:18px;}
+ .inner {
+margin-left: 2px;
+color:white;
+font-size:18px;
+
+}
+body{margin-left: 300px;}
+#background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: -1; /* Ensure div tag stays behind content; -999 might work, too. */
+}
+
+.stretch {
+    width:100%;
+    height:100%;
+}
+
+h1 {
+  text-shadow: 2px 2px 8px yellow;
+}
+.button4 {border-radius: 10px;}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+    </head>
+  <body>
+    <div id="background">
+        <img src="{% static 'wood.jpg' %}" class="stretch" alt="" />
+    </div>
+    <h1 style="color:#DAE0DE;"><b>Car Sales prediction(Artificial neural networks)</b></h1>
+    <h2 style="color:white;"><p>Please fill in the following details, so as to predict the purchase value of a car that you afford to buy:</p></h2>
+<br>
+    <form name="myform" action="{% url 'annresult' %}">
+      {% csrf_token %}
+
+
+  <p>
+<label for="gender" style="color:white">Choose gender:</label>
+ <select id="cars" name="gender">
+   <option value="0">Male</option>
+   <option value="1">Female</option>
+
+ </select></p>
+ <p style="color:white">Your age:
+ <input type="decimal" name="age" min="10.0" max="90.0" required> <button type="button" class="button button4" onclick="buttonaged()" style="background-color:orange;font-size:14px" >details</button>
+ </p>
+ <p style="color:white">Annual Salary:
+ <input type="decimal" name="salary" min="0" required> <button type="button" class="button button4" onclick="buttonsalary()" style="background-color:orange;font-size:14px" >details</button>
+ </p>
+ <p style="color:white">Credit card debt:
+ <input type="decimal" name="debt" min="0" required> <button type="button" class="button button4" onclick="buttondebt()" style="background-color:orange;font-size:14px" >details</button>
+ </p>
+ <p style="color:white">Net Worth:
+ <input type="decimal" name="worth" min="0" required> <button type="button" class="button button4" onclick="buttonworth()" style="background-color:orange;font-size:14px" >details</button>
+ </p>
+
+<br>
+         <br>
+    <div class="inner">  <input type="submit" value="Submit" class="button button4"  style="background-color:orange; width:200px;heigth:300;font-weight: bold;">
+    </div>  <br>
+      <br>
+  <div class="inner">
+       <button type="button" class="button button4" onclick="buttoncar()" style="background-color:orange;font-size:14px;">click for details</button>
+</div>
+  </form>
+
+  <script type="text/javascript" src="{% static 'main.js' %}"></script>
+  </body>
+</html>

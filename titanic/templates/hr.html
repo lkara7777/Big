@@ -11,8 +11,22 @@
   margin-left: 20px;
 
 }
-     body {
-  background: url(https://www.itl.cat/pngfile/big/0-7371_pixabay-wood-background.jpg);background-size:100% 110%;text-indent: 20%;
+body{margin-left: 300px;
+
+
+}
+#background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: -1; /* Ensure div tag stays behind content; -999 might work, too. */
+}
+
+.stretch {
+    width:100%;
+    height:100%;
 }
 button{indent: 20%;}
 .button4 {border-radius: 10px;}
@@ -32,7 +46,9 @@ button{indent: 20%;}
     </style>
   </head>
   <body style="background-color:darkSeaGreen">
-
+    <div id="background">
+        <img src="{% static 'wood.jpg' %}" class="stretch" alt="" />
+    </div>
 
     <h1 style="color:#DAE0DE;"><b>Human Resources Retention</b></h1>
     <h2 style="color:#DAE0DE;"><p>Do you wish to predict who employee is going to leave? Please fill the question below and find out.</p></h2>

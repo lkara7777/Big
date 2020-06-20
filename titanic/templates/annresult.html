@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!--{% load static %}
+    <link rel="stylesheet" href="{% static 'main1.css' %}">-->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'image.jpg' %}">
+    <style>
+
+ p    {font-size:18px;}
+ .right{
+   margin-left: 600px;margin-top: 20px;
+ }
+ .left{margin-left: 50px;
+
+ }
+ .inner {
+margin-left: 2px;
+color:white;
+font-size:18px;
+
+}
+body{margin-left: 20px;margin-top: 220px;
+
+
+}
+#background {
+    width: 100%;
+    height: 110%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: -1; /* Ensure div tag stays behind content; -999 might work, too. */
+}
+
+.stretch {
+    width:100%;
+    height:100%;
+}
+h1 {
+  text-shadow: 2px 2px 8px yellow;
+  margin-left: 400px;margin-top: 60px;
+}
+.button4 {border-radius: 10px;}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+#myImg1,#myImg2,#myImg3 {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg1,#myImg2,#myImg3:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+.modal1-content,.modal2-content,.modal3-content,.modal4-content,.modal5-content,.modal6-content,.modal7-content,
+.modal8-content,.modal9-content,.modal10-content,.modal11-content,.modal12-content
+ {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption1,#caption2,#caption3,#caption4,#caption5,#caption6,#caption7,#caption8,#caption9,#caption10,#caption11,#caption12
+ {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal1-content, #caption1,.modal2-content, #caption2,.modal3-content, #caption3,.modal4-content, #caption4,.modal5-content, #caption5,.modal6-content, #caption6,
+.modal7-content, #caption7,.modal8-content, #caption8,.modal9-content, #caption9,.modal10-content, #caption10,.modal11-content, #caption11,.modal12-content, #caption12
+
+ {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)}
+  to {-webkit-transform:scale(1)}
+}
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close1,.close2,.close3,.close4,.close5,.close6,.close7,.close8,.close9,.close10,.close11,.close12 {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close1,.close2,.close3:hover,.close3,.close4,.close3:hover,.close4:hover,.close5,.close6,.close5:hover,.close6:hover,.close7,.close8,.close7:hover,.close8:hover,
+.close9,.close10,.close9:hover,.close10:hover,.close11,.close12,.close11:hover,.close12:hover,
+.close3:focus,.close2:focus,.close1:focus,.close4:focus,.close5:focus, .close6:focus,.close7:focus,.close8:focus,.close9:focus,.close10:focus,.close11:focus,.close12:focus,
+{
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal1-content,.modal2-content,.modal3-content,.modal4-content,.modal5-content,.modal6-content,
+  .modal7-content,.modal8-content,.modal9-content,.modal10-content,.modal11-content,.modal12-content,
+   {
+    width: 100%;
+  }
+}
+</style>
+    </head>
+  <body>
+    <div id="background">
+        <img src="{% static 'ANN7.jpg' %}" class="stretch" alt="" />
+    </div>
+    <h1 style="color:#DAE0DE;"><b>Car Sales prediction(Artificial neural networks)</b></h1>
+    <br>
+    <br>
+    <h3 style="color:white;"><b>The ANN prediction for the car's value is:  {{prediction}} dollars.</b></h3>
+<br>
+<table>
+<tr><th><div class="left">
+  <img id="myImg1" src="{% static 'loss.png' %}" alt="Zoom" style="width:100%;max-width:300px" height="200px">
+
+
+</div></th>
+<th><div class="right"><a target="_blank" href="https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=4,2&seed=0.45730&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false" >
+
+  <img src="{% static 'playground.jpeg' %}" alt="Description" style="border:2px solid green;style="width:100%;max-width:320px" height="200px" ></a></div>
+</th></tr>
+<tr><th>
+<div class="inner1" style="color:yellow;">After 10 epochs, there is no actual difference between validation and training loss.
+</div></th><th><div class='right' style="color:yellow;" >Click above to play in the playground of neural networks</div></th></tr></table>
+
+
+<br>
+<div class="inner" style> &#9755;
+      <a href="{% url 'welcome' %}" style="color:white;">welcome page</a>
+  </div>
+  <div id="myModal1" class="modal">
+    <span class="close1">&times;</span>
+    <img class="modal1-content" id="img01">
+    <div id="caption1"></div>
+  </div>
+  <script>
+  var modal = document.getElementById("myModal1");
+
+  // Get the image and insert it inside the modal - use its "alt" text as a caption
+  var img = document.getElementById("myImg1");
+  var modalImg = document.getElementById("img01");
+  var captionText = document.getElementById("caption1");
+  img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+  }
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close1")[0];
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+  modal.style.display = "none";
+  }
+
+
+  // Get the image and insert it inside the modal - use its "alt" text as a caption
+
+  img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+  }
+  </script>
+
+
+  <script type="text/javascript" src="{% static 'main.js' %}"></script>
+  </body>
+</html>
