@@ -55,9 +55,6 @@ cursor: crosshair;}
   margin: 4px 2px;
   cursor: pointer;
 }
-h1 {
-  text-shadow: 2px 2px 8px yellow;
-}
 </style>
 
 
@@ -68,10 +65,10 @@ h1 {
     </head>
   <body>
 
-        <h1 style="color:#DAE0DE;"><b>Model's outcome:</b></h1>
+        <h1 style="color:#DAE0DE;"><b>Results:</b></h1>
         <br>
           <div class="inner"><b>
-        According to the predictive model  {{prediction}}</b>
+        According to the predicted model  {{prediction}}</b>
         </div>
         <br>
         <br>
@@ -126,13 +123,11 @@ clearcanvas();
     <br>
     <br>
     <br>
-    <br>
-    <br>
-      <div class="inner">&#9758;
-              <a href="{% url 'analysis' %}" style="color:yellow;">Data analysis</a>
+      <div class="inner">
+            <a href="{% url 'home' %}" style="color:white;">click for home page</a>  <a href="{% url 'analysis' %}" style="color:yellow;">Data analysis</a>
         </div>
         <div class="inner">
-
+        <a href="{% url 'analysisC' %}" style="color:yellow;">Data Analysis for Customer's country</a></div>
       <script type="text/javascript" src="{% static 'main.js' %}"></script>
 
       </body>

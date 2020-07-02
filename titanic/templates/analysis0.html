@@ -9,10 +9,8 @@
     <link rel="stylesheet" href="{% static 'image.jpg' %}">
     <style>
     body {
-    background: url(https://www.itl.cat/pngfile/big/0-7371_pixabay-wood-background.jpg);text-indent: 20%;
-    height:100%; background-size: cover;background-repeat: no-repeat;background-position: center;
-    }
-
+ background: url(https://www.itl.cat/pngfile/big/0-7371_pixabay-wood-background.jpg);background-size:100% 130%;text-indent: 20%;
+}
  p    {font-size:20px;
       margin-left: 20px;
       margin-right:40px;
@@ -23,9 +21,6 @@
 body {
   margin-left: 20px;
   margin-right:40px;
-}
-h1 {
-  text-shadow: 2px 2px 8px yellow;
 }
 #myImg1,#myImg2,#myImg3 {
   border-radius: 5px;
@@ -127,28 +122,28 @@ h1 {
     </head>
   <body>
 
-        <h1 style="color:#DAE0DE;"><b>Data Analysis of Clustering:</h1><h3 style="color:yellow;"> (Multi-class model)</b></h3>
-
-          <b>
-    <h3 style="color:yellow;">  According to the predicted model for grouping Customers, see a serie of visuals that explain the influencing factors:</h3>
+        <h1 style="color:#DAE0DE;"><b>Data Analysis of Clustering:</h1><h3> (Multi-class model)</b></h3>
+        <br>
+          <div class="inner"><b>
+        According to the predicted model for grouping Customers, see the results:
       </b>
-
+        </div>
         <br>
         <div>
-          <img id="myImg1" src="{% static 'products.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
-          <img id="myImg2" src="{% static 'countries_cl.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
-          <img id="myImg3" src="{% static 'agegroup_cl.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
-          <img id="myImg4" src="{% static 'customer_cl.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+          <img id="myImg1" src="{% static 'plotmain.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+          <img id="myImg2" src="{% static 'Countries0.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+          <img id="myImg3" src="{% static 'AgeGroup0.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+          <img id="myImg4" src="{% static 'CustomerType0.png' %}" alt="Zoom" style="width:100%;max-width:280px">
 
         </div>
-        <div><img id="myImg5" src="{% static 'promo_val.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
-           <img id="myImg6" src="{% static 'promo_cl.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
-           <img id="myImg7" src="{% static 'gender_cl.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
-              <img id="myImg8" src="{% static 'heatmap0.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+        <div><img id="myImg5" src="{% static 'Trainer0.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+           <img id="myImg6" src="{% static 'Promo0.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+           <img id="myImg7" src="{% static 'Gender0.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+              <img id="myImg8" src="{% static 'Violin0.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
          </div>
-<div><img id="myImg9" src="{% static 'avgtests.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
-  <img id="myImg10" src="{% static 'maxtests.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
-  <img id="myImg11" src="{% static 'trainer_cl.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+<div><img id="myImg9" src="{% static 'catplot.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+  <img id="myImg10" src="{% static 'features0.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+  <img id="myImg11" src="{% static 'heatmap0.png' %}" alt="Zoom" style="width:100%;max-width:280px">
      <img id="myImg12" src="{% static 'features0.png' %}" alt="Zoom" style="width:100%;max-width:280px">
    </div>
         <!-- The Modal -->
@@ -215,8 +210,8 @@ h1 {
 
 <br>
 <br>
-        <div class="inner" style="font-size:18px">&#9758;
-              <a href="{% url 'welcome' %}" style="color:white;">Welcome page</a>
+        <div class="inner">
+              <a href="{% url 'home' %}" style="color:white;">click for home page</a>
           </div>
 
 
