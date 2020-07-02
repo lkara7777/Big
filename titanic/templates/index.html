@@ -11,8 +11,13 @@
   margin-left: 20px;
 
 }
-     body {
-  background: url(https://www.itl.cat/pngfile/big/0-7371_pixabay-wood-background.jpg);background-size:100% 110%;text-indent: 20%;
+body {
+background: url(https://www.itl.cat/pngfile/big/0-7371_pixabay-wood-background.jpg);text-indent: 20%;
+height:100%; background-size: cover;background-repeat: no-repeat;background-position: center;
+}
+
+h1 {
+  text-shadow: 2px 2px 8px yellow;
 }
 button{indent: 20%;}
 .button4 {border-radius: 10px;}
@@ -34,13 +39,13 @@ button{indent: 20%;}
   <body style="background-color:darkSeaGreen">
 
 
-    <h1 style="color:#DAE0DE;"><b>Welcome</b></h1>
+    <h1 style="color:#DAE0DE;"><b>Customers' clustering</b></h1>
     <h2 style="color:#DAE0DE;"><p>Please fill in the following details so as to let you know what type of certification may interest you:</p></h2>
 
     <form name="myform" action="{% url 'result' %}">
       {% csrf_token %}
       <p style="color:white">NoTests
-      <input type="number" name="NoTests" min="0" required> <button type="button" class="button button4" onclick="buttonDetails()" style="background-color:orange;font-size:14px" >details</button>
+      <input type="number" name="NoTests" min="0" required> <button type="button" class="button button4" onclick="buttonDetails1()" style="background-color:orange;font-size:14px" >details</button>
     <!--  <p style="color:#de6510">agegroup</p>
       <input type="text" name="agegroup" required> <button type="button" onclick="buttonage()" style="background-color:orange;font-size:14px" >details</button>
 --></p>

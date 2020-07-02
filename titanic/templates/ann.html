@@ -16,6 +16,35 @@ color:white;
 font-size:18px;
 
 }
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+.container .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.container .btn:hover {
+  background-color: black;
+}
 body{margin-left: 300px;}
 #background {
     width: 100%;
@@ -82,8 +111,11 @@ h1 {
 
 <br>
          <br>
-    <div class="inner">  <input type="submit" value="Submit" class="button button4"  style="background-color:orange; width:200px;heigth:300;font-weight: bold;">
-    </div>  <br>
+         <div class="container">
+  <img src="{% static 'cars.png' %}" style="width:100%">
+ <input type="submit" value="Submit" class="button button4 btn"  style="width:100px;heigth:100;font-weight: bold;">
+</div>
+   <br>
       <br>
   <div class="inner">
        <button type="button" class="button button4" onclick="buttoncar()" style="background-color:orange;font-size:14px;">click for details</button>
