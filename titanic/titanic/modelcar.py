@@ -2,6 +2,9 @@ def predict(gender,age,salary,debt,worth):
 
     import pickle
     from sklearn.preprocessing import MinMaxScaler
+    import tensorflow.keras
+    from keras.models import Sequential
+    from keras.layers import Dense
 
     x=[[gender,age,salary,debt,worth]]
     scaler = MinMaxScaler()
