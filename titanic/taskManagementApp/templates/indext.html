@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Your opinion</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  </head>
+  <style>
+  body{margin-left: 40px;}
+  h1 {
+    text-shadow: 2px 2px 8px yellow;
+  }
+  #background {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      left: 0px;
+      top: 0px;
+      z-index: -1; /* Ensure div tag stays behind content; -999 might work, too. */
+  }
+
+  .stretch {
+      width:100%;
+      height:100%;
+  }
+  </style>
+  <body style="background-color:powderblue;">
+    <div id="background">
+        <img src="https://healthitanalytics.com/images/site/article_headers/_normal/GettyImages-912319336.jpg" class="stretch" alt="" />
+    </div>
+
+  <h1 style="color:orange;"><b>Users' opinion</b></h1>
+
+    <br>
+    <br>
+
+    <table class="table table-hover" style="color:orange;">
+      <tr>
+        <th>Name</th>
+          <th>Opinion</th>
+            <th>Delete?</th>
+      </tr>
+
+    {% for item in all_items %}
+    <tr>
+      <td>{{item.name}}</td>
+        <td>{{item.opinion}}</td>
+          <td style="color:orange;"><a href="{% url 'delete' item.id %}"><h5 style="color:orange;">delete</h5></a></td>
+
+        <td></td>
+    </tr>
+
+    {% endfor %}
+        </table>
+    <form class="form-group" action="{% url 'tell' %}" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+   <label for="name" style="color:orange;">Your Name:</label><br>
+    <input type="text" name="name" min="" required>
+   <br></div>
+    <div class="form-group">
+   <label for="opinion" style="color:orange;">Opinion:</label><br>
+      <input type="text" name="opinion" value ="" maxlength="40" required><br></div>
+    <input type="submit" class="btn btn-primary" value="submit" style="color:orange;">
+      </form>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="inner" style> &#9755;
+      <a href="{% url 'welcome' %}" style="color:orange;font-size:18px">welcome page</a>
+  </div>
+
+
+    </body>
+
+</html>
