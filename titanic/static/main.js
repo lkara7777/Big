@@ -93,6 +93,12 @@ function buttonAlerthr() {
 function buttonAlert0() {
   alert("When clicking the submit an algorithm will run to result if it is likely to continue with an advanced ITIL or not.");
 }
+function buttonsent() {
+  alert("When clicking the submit an algorithm will run to result what is the sentiment of your opinion about the airline.");
+}
+function buttonairopinion() {
+  alert("Write your opinion about your experience with the airline that you travelled recently.");
+}
 function buttoncar() {
   alert("When clicking the submit ANN will run to result what value will pay for the car.");
 }
