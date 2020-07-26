@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Text Analyzer</title>
+  {% load static %}
+    <link rel="stylesheet" href="{% static 'main1.css' %}">
+    <style>
+     p    {font-size:18px;}
+     .inner {
+  margin-left: 20px;
+
+}
+
+#background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: -1; /* Ensure div tag stays behind content; -999 might work, too. */
+}
+
+.stretch {
+    width:100%;
+    height:100%;
+}
+
+.inner1 {
+margin-left: 150px;
+color:white;
+font-size:16px;
+
+}
+
+h1 {
+  text-shadow: 2px 2px 8px yellow;
+}
+button{indent: 20%;}
+.button4 {border-radius: 10px;}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+    </style>
+  </head>
+  <body style="background-color:darkSeaGreen">
+    <div id="background">
+        <img src="{% static 'nlp2.jpg' %}" class="stretch" alt="" />
+    </div>
+
+    <h1 style="color:#DAE0DE;"><b>Define the problem:</b></h1>
+
+<div style="color:yellow;">Given tweets about six US airlines, the task is to predict whether a tweet contains positive, negative,</div>
+  <div style="color:yellow;"> or neutral sentiment about the airline. This is a typical supervised learning task where given a text </div>
+      <div  style="color:yellow;"> string, we have to categorize the text string into predefined categories.</div>
+
+    <form name="myform" action="{% url 'nlpresult' %}">
+      {% csrf_token %}
+    <br>
+  <div class="inner1" style="color:white;">
+    <img id="myImg1" src="{% static 'sentiment.png' %}" alt="Zoom" style="width:100%;max-width:320px" height="240px"></div>
+
+    <p style="color:white">Opinion:
+    <input type="text" name="opinion" value ="" maxlength="60" required> <button type="button" class="button button4" onclick="buttonairopinion()" style="background-color:orange;font-size:14px" >details</button>
+  <!--  <p style="color:#de6510">agegroup</p>
+    <input type="text" name="agegroup" required> <button type="button" onclick="buttonage()" style="background-color:orange;font-size:14px" >details</button>
+  --></p>
+  <br>
+
+
+ <br>
+ <br>
+<div class="inner">  <input type="submit" class="button button4" value="Submit" style="background-color:orange; width:100px;heigth:100;font-weight: bold;">
+</div>  <br>
+<div class="inner">
+  <button class="button button4" type="button"  style="background-color:orange;font-size:14px" >
+<button type="button" class="button button4" onclick="buttonsent()" style="background-color:orange;font-size:14px;" >click for details</button>
+</div>
+
+
+
+
+
+
+
+
+    </form>
+
+
+  <script type="text/javascript" src="{% static 'main.js' %}"></script>
+  </body>
+</html>

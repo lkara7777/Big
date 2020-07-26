@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>HR result</title>
+    <!--{% load static %}
+    <link rel="stylesheet" href="{% static 'main1.css' %}">-->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'image.jpg' %}">
+    <style>
+    body {
+ background: url(https://www.itl.cat/pngfile/big/0-7371_pixabay-wood-background.jpg);background-size:100% 130%;text-indent: 20%;
+}
+ p    {font-size:20px;
+      margin-left: 20px;
+      margin-right:40px;
+ }
+
+
+
+}
+body {
+  margin-left: 20px;
+  margin-right:40px;
+}
+#myImg1,#myImg2,#myImg3 {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.inner1 {
+margin-left: 10px;
+color:white;
+font-size:18px;
+
+}
+
+#myImg1,#myImg2,#myImg3:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+.modal1-content,.modal2-content,.modal3-content,.modal4-content,.modal5-content,.modal6-content,.modal7-content,
+.modal8-content,.modal9-content,.modal10-content,.modal11-content,.modal12-content
+ {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption1,#caption2,#caption3,#caption4,#caption5,#caption6,#caption7,#caption8,#caption9,#caption10,#caption11,#caption12
+ {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal1-content, #caption1,.modal2-content, #caption2,.modal3-content, #caption3,.modal4-content, #caption4,.modal5-content, #caption5,.modal6-content, #caption6,
+.modal7-content, #caption7,.modal8-content, #caption8,.modal9-content, #caption9,.modal10-content, #caption10,.modal11-content, #caption11,.modal12-content, #caption12
+
+ {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)}
+  to {-webkit-transform:scale(1)}
+}
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close1,.close2,.close3,.close4,.close5,.close6,.close7,.close8,.close9,.close10,.close11,.close12 {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close1,.close2,.close1:hover,.close2:hover,.close3:hover,.close3,.close4,.close4:hover,.close5,.close6,.close5:hover,.close6:hover,.close7,.close8,.close7:hover,.close8:hover,
+.close9,.close10,.close9:hover,.close10:hover,.close11,.close12,.close11:hover,.close12:hover,
+.close3:focus,.close2:focus,.close1:focus,.close4:focus,.close5:focus, .close6:focus,.close7:focus,.close8:focus,.close9:focus,.close10:focus,.close11:focus,.close12:focus,
+{
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal1-content,.modal2-content,.modal3-content,.modal4-content,.modal5-content,.modal6-content,
+  .modal7-content,.modal8-content,.modal9-content,.modal10-content,.modal11-content,.modal12-content,
+   {
+    width: 100%;
+  }
+}
+h1 {
+  text-shadow: 2px 2px 8px yellow;
+}
+
+</style>
+
+
+
+    </head>
+      <body>
+    <h1 style="color:#DAE0DE;"><b>Model's outcome:</b></h1>
+    <br>
+    <p style="color:yellow;">&#9857;<b> {{prediction}}</b></p>
+
+    <br>
+    <br>
+
+
+
+
+
+<br>
+<p style="color:white;">&#9857;<b> In order to understand what drives an employee to leave, according to company's data, please check below the feature's importance:</b></p>
+<br>
+<br>
+<div class="inner1" style="color:white;">
+  <img id="myImg1" src="{% static 'hr_features.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+
+  &#9889; <b><u>On the left, we see all the parameters that have the greatest effect on the fact that an employeee may leave.</u></b>
+<!--  <img id="myImg2" src="{% static 'Countries.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+  <img id="myImg3" src="{% static 'AgeGroup.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+  <img id="myImg4" src="{% static 'CustomerType.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+
+</div>
+<div><img id="myImg5" src="{% static 'Trainer.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+   <img id="myImg6" src="{% static 'PromoFound.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+   <img id="myImg7" src="{% static 'Gender.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+      <img id="myImg8" src="{% static 'TestTakenHist.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+ </div>
+<div><img id="myImg9" src="{% static 'TestTakenDaysPast.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+<img id="myImg10" src="{% static 'Violin.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+<img id="myImg11" src="{% static 'heatmap.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+<img id="myImg12" src="{% static 'features.png' %}" alt="Zoom" style="width:100%;max-width:280px">-->
+</div>
+<!-- The Modal -->
+<div id="myModal1" class="modal">
+  <span class="close1">&times;</span>
+  <img class="modal1-content" id="img01">
+  <div id="caption1"></div>
+</div>
+
+
+
+
+
+<br>
+<br>
+
+
+
+
+  <script>
+// Get the modal
+var modal = document.getElementById("myModal1");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg1");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption1");
+img.onclick = function(){
+modal.style.display = "block";
+modalImg.src = this.src;
+captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close1")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+modal.style.display = "none";
+}
+
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+
+img.onclick = function(){
+modal.style.display = "block";
+modalImg.src = this.src;
+captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+
+
+// Get the <span> element that closes the modal
+
+
+// When the user clicks on <span> (x), close the modal
+
+
+
+</script>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="inner1">&#9758;
+        <a href="{% url 'hrranalysis' %}" style="color:yellow;">More Data analysis</a>
+  </div>
+</body>
+</html>
