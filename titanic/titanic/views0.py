@@ -2,6 +2,7 @@ from django.shortcuts import render
 from . import model0
 from . import modelc
 from . import modelcar
+from . import modelnlp
 import sys
 import traceback
 from decimal import Decimal
@@ -9,6 +10,8 @@ from decimal import Decimal
 
 def it(request):
     return render(request,'it.html')
+def nlp(request):
+    return render(request,'nlp.html')
 def ann(request):
     return render(request,'ann.html')
 def prophet(request):
@@ -27,7 +30,15 @@ def annresult(request):
     #title=int(request.GET['title'])
     prediction=modelcar.predict(gender,age,salary,debt,worth)
     return render(request,'annresult.html',{'prediction':prediction})
+def nlpresult(request):
 
+    opinion=str(request.GET['opinion'])
+
+
+
+    #title=int(request.GET['title'])
+    prediction=modelnlp.predict(opinion)
+    return render(request,'nlpresult.html',{'prediction':prediction})
 def analysis1(request):
     return render(request,'analysis1.html')
 def result0(request):
