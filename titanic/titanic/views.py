@@ -18,7 +18,9 @@ def hrranalysis(request):
 def index(request):
     return render(request,'index.html')
 def sigmoid(request):
-        return render(request,'sigmoid.html')
+    return render(request,'sigmoid.html')
+def pearl(request):
+    return render(request,'pearl.html')
 def result(request):
 
     NoTests=int(request.GET['NoTests'])

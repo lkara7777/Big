@@ -44,7 +44,7 @@ def predict(TestTaken,AgeGroup,Country,DaysPast,Type,Gender,PromoFound,Trainer):
         prediction=prediction+", but for you there is a discount coupon so as to think again."
     elif prediction==1:
         prediction='you are thinking to move on with the next level,'
-        prediction=prediction+ ' so in order to finalize your decision, we offer a discount coupon.'
+        prediction=prediction+ ' so as to finalize your decision, we offer a discount coupon.'
 
 
     else:

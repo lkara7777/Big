@@ -37,6 +37,7 @@ urlpatterns = [
     path('hrranalysis/', views.hrranalysis,name='hrranalysis'),
     path('hranalysismore/', views.hranalysismore,name='hranalysismore'),
     path('sigmoid/', views.sigmoid,name='sigmoid'),
+    path('pearl/', views.pearl,name='pearl'),
     path('analysisC/',views0.analysisC,name='analysisC'),
     path('nlp/',views0.nlp,name='nlp'),
     path('nlpresult/',views0.nlpresult,name='nlpresult'),

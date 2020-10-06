@@ -9,7 +9,7 @@ def predict(opinion):
     c=[opinion]
     sentiment=pickle.load(open('sentiment.sav','rb'))
     vectorizer = TfidfVectorizer(max_features=20, min_df=0.3, max_df=1.0, stop_words=stopwords.words('english'))
-    vector = vectorizer.fit_transform(x).toarray()
+    vector = sentiment.vectorizer.fit_transform(x).toarray()
     vec = vectorizer.transform(c).toarray()
 
     prediction=sentiment.predict(vec)
