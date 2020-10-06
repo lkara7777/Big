@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Temperature Farecasting</title>
+    <title>Voucher Orders Farecasting</title>
   {% load static %}
     <link rel="stylesheet" href="{% static 'main1.css' %}">
     <style>
@@ -164,7 +164,7 @@ font-size:16px;
 <div class="inner1">
 
   <h3 style="color:yellow;"><b>We will be using Prophet to predict the monthly orders of a product.</b></h3>
-    <h3 style="color:yellow;"><b>We will aim to forecast the last 6 months of the current dataset and then compare it against the actuals in order to see if Prophet does a good job.</b></h3>
+    <h3 style="color:yellow;"><b>We will aim to forecast the last 4 months of the current dataset and then compare it against the actuals in order to see if Prophet does a good job.</b></h3>
 <div style="color:yellow;font-size:18px;"><b>Below we inspect the dataset we have:</b></div>
 </div>
 
@@ -178,7 +178,7 @@ font-size:16px;
 </div>
 <div class="inner1">
 
-  <h3 style="color:yellow;"><b>Let’s generate a forecast for the 6 months we backed out of the actuals dataset.</b></div>
+  <h3 style="color:yellow;"><b>Let’s generate a forecast for the 4 months we backed out of the actuals dataset.</b></div>
 
 </div>
 <div class="inner">
@@ -192,7 +192,7 @@ font-size:16px;
 
 </div>
 <div class="inner">
-  <img id="myImg3" src="{% static 'componentsvouchers.png' %}" alt="Zoom" style="width:100%;max-width:720px;height:340px;">
+  <img id="myImg3" src="{% static 'componentsvouch.png' %}" alt="Zoom" style="width:100%;max-width:720px;height:340px;">
 </div>
 <div class="inner1">
 
@@ -200,23 +200,23 @@ font-size:16px;
 
 </div>
 <div class="inner">
-  <img id="myImg4" src="{% static 'forecastvsactualV.png' %}" alt="Zoom" style="width:100%;max-width:480px;height:240px;">
+  <img id="myImg4" src="{% static 'forecastvsactualVO.png' %}" alt="Zoom" style="width:100%;max-width:480px;height:240px;">
 </div>
 <div class="inner1">
 
-  <h3 style="color:yellow;"><b>Concluding, Prophet captured the trend of the months, but the deviations from the real values are due to unusual increase for the first 4 months of </p></div>
+  <h3 style="color:yellow;"><b>Concluding, there is a upward trend in both lines, and the predicted line is about 4.5% higher than the actual value,   </p></div>
     <div class="inner1">
 
-      <h3 style="color:yellow;"><b>investigation comparing with the rest of the data.</p></div>
+      <h3 style="color:yellow;"><b>but the interval between predicted value and lower bound is able to catch the actual value. So far, the model is doing fairly good.</p></div>
 
 </div>
 <div class="inner1">
 
-  <h3 style="color:yellow;"><b>Additionally, if we want to forecast beyond the actuals values, for example in next 6 months, check below:</p></div>
+  <h3 style="color:yellow;"><b>Additionally, if we want to forecast beyond the actuals values, for example in next 4 months, check below:</p></div>
 
 </div>
 <div class="inner">
-  <img id="myImg5" src="{% static 'futurevouch.png' %}" alt="Zoom" style="width:100%;max-width:480px;height:240px;">
+  <img id="myImg5" src="{% static 'futurevouchh.png' %}" alt="Zoom" style="width:100%;max-width:480px;height:240px;">
 </div>
 <br>
 <br>

@@ -36,6 +36,7 @@ body {
   margin-left: 20px;
   margin-right:40px;
 }
+
 #canv{vertical-align: top;
 display:inline;
 border: 5px solid orange;
@@ -70,8 +71,10 @@ h1 {
 
         <h1 style="color:#DAE0DE;"><b>Model's outcome:</b></h1>
         <br>
+        <br>
+
           <div class="inner"><b>
-        According to the predictive model  {{prediction}}</b>
+        According to the predictive model {{prediction}}</b>
         </div>
         <br>
         <br>
@@ -80,7 +83,7 @@ h1 {
     </div>
 
     <br>
-    <div class="inner">
+  <!--  <div class="inner">
 
     <p><b>In order to get the coupon please verify that you are not a robot, fill the number below:</b></p></div>
       <br>
@@ -96,8 +99,30 @@ h1 {
 <img id="output" width="200" />
 
 <button type="button" onclick="buttonsave()" style="background-color:orange;font-size:14px">check answer</button>-->
-<canvas id="canv" width="120" height="120" style="background-color:#000000"></canvas>
-<button id="check" class="button button4" value="check">check</button>
+<!--<canvas id="canv" width="120" height="120" style="background-color:#000000"></canvas>
+<button id="check" class="button button4" value="check">check</button>-->
+  <div class="inner">&#9857;<b> In order to understand what drives a customer to upsell, please check below the feature's importance:</b></div>
+<br>
+<br>
+<div class="inner" style="color:white;">
+  <img id="myImg1" src="{% static 'features.png' %}" alt="Zoom" style="width:100%;max-width:480px" height="290px">
+
+
+<!--  <img id="myImg2" src="{% static 'Countries.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+  <img id="myImg3" src="{% static 'AgeGroup.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+  <img id="myImg4" src="{% static 'CustomerType.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+
+</div>
+<div><img id="myImg5" src="{% static 'Trainer.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+   <img id="myImg6" src="{% static 'PromoFound.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+   <img id="myImg7" src="{% static 'Gender.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+      <img id="myImg8" src="{% static 'TestTakenHist.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+ </div>
+<div><img id="myImg9" src="{% static 'TestTakenDaysPast.png' %}" alt="Zoom" style="width:100%;max-width:280px" height="170px">
+<img id="myImg10" src="{% static 'Violin.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+<img id="myImg11" src="{% static 'heatmap.png' %}" alt="Zoom" style="width:100%;max-width:280px">
+<img id="myImg12" src="{% static 'features.png' %}" alt="Zoom" style="width:100%;max-width:280px">-->
+</div>
 
 
 <script>
@@ -113,18 +138,11 @@ clearcanvas();
 
 </div>
 
-
+<br>
+<br>
   <br>
   <br>
 <div id="myDIV" style="font-size:20px"></div>
-
-
-    <br>
-
-    <br>
-    <br>
-    <br>
-    <br>
     <br>
     <br>
     <br>

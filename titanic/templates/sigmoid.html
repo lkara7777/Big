@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>HR predictor</title>
+    <title>Sigmoid Curve</title>
   {% load static %}
     <link rel="stylesheet" href="{% static 'main1.css' %}">
     <style>
@@ -64,16 +64,56 @@ font-size:16px;
         <img src="{% static 'wood.jpg' %}" class="stretch" alt="" />
     </div>
 
-    <h1 style="color:#DAE0DE;"><b>Product's life cycle</b></h1>
+    <h1 style="color:#DAE0DE;"><b>Product's life cycle - Sigmoid curve</b></h1>
 <br>
-
 <div class="inner1">
 
-  <h3 style="color:yellow;"><b>We gather the sales's quantity of a product A for the period: 06/2017 - 04/2020. And we predict the sales's quantity of the product with the sigmoid function.</b></h3>
-    <h3 style="color:yellow;"><b></h3>
+
+<div style="color:yellow;margin-left: 5px;font-size:18px"><b>Some data take the form of an elongated S when plotted and the curve has the following characteristics:</b></div>
+  <div style="color:yellow;margin-left: 5px;font-size:18px">  <b>- very small initial slope,</b></div>
+
+
+<div style="color:yellow;margin-left: 5px;font-size:18px">
+    <b>- followed by a period of increasing slope which gives way to constant slope</b></div>
+
+
+<div style="color:yellow;margin-left: 5px;font-size:18px">
+    <b>- and decreasing slope approaches zero.</b></div>
+
+</div>
+<br>
+<div class="inner">
+  <img src="{% static 'sigmoid.png' %}" alt="" style="border:2px solid green;width:420px;height:180px;">
+<img src="{% static 'sigm2.jpg' %}" alt="" style="border:2px solid green;width:420px;height:180px;">
+</div>
+<br>
+<div class="inner1">
+<div style="color:yellow;margin-left: 5px;font-size:18px">
+    <b>Pearl equation can be used to fit S shaped data. The fitting problem is called Sigmoid Regression.</b></div>
     <div style="color:yellow;margin-left: 5px;font-size:18px">
+        <b>Often when plotted over time the sales of a product will follow an S-shaped curve. Fitting an S-shaped curve to the first few months of data is important</b></div>
+        <div style="color:yellow;margin-left: 5px;font-size:18px">
+            <b>because it enables us to estimate how long it will take for sales to level off.</b></div>
+            <div style="color:yellow;margin-left: 5px;font-size:18px">
+                <b>It is critical to find the point where the S-shaped curve starts to flatten out so as companies to find a second curve by launching another product.</b></div>
+              </div>  <br>
+                <div class="inner">
+                  <img src="{% static 'sigm33.png' %}" alt="" style="border:2px solid green;width:500px;height:250px;">
+                <img src="{% static 'sigm4.jpg' %}" alt="" style="border:2px solid green;width:500px;height:250px;">
+                </div>
+                <br>
+                <br>
+                <br>
+
+<div class="inner1">
+  <div style="color:white;margin-left: 5px;font-size:18px"><b>Real example:</b></div>
+<br>
+  <div style="color:yellow;margin-left: 5px;font-size:18px"><b>We gather the sales's quantity of a product A for the period: 06/2017 - 04/2020. And we predict the sales's quantity of the product with the sigmoid function.</b></div>
+
+    <div style="color:yellow;margin-left: 5px;font-size:18px"><b>
     Blue line is consisted from real data for every month and red line is constructed from the following function that predicted the sales'quantity:</b></div>
 </div>
+<br>
 <div class="inner"><b> y=75800/(1+ 404.4*exp(-0.306*t))</b> &nbsp;&nbsp;[1920 by Raymond Pearl]
 
 </div>
@@ -82,22 +122,33 @@ font-size:16px;
   <img src="{% static 'sigmoidold.png' %}" alt="" style="border:2px solid green;width:420px;height:210px;">
 <img src="{% static 'rateold.png' %}" alt="" style="border:2px solid green;width:420px;height:210px;">
 </div>
+<br>
 <div class="inner1">
 
-  <h3 style="color:yellow;"><b>Apparently, it is doing a very good job predicting the monthly sales' quantity.
-  Considering the rate of change in sales'quantity,<div style="color:yellow;margin-left: 5px;font-size:18px">
+    <div style="color:yellow;margin-left: 5px;font-size:18px"><b>Apparently, it is doing a very good job predicting the monthly sales' quantity.
+  Considering the rate of change in sales'quantity,</b><div style="color:yellow;margin-left: 5px;font-size:18px">
     <b>product A has already reached the point of flatten out.Thus,decisions should have been taken to strengthen the product A or launch similar product.</b></div>
+
+</div>
+<br>
+<br>
+<div class="inner1">
+
+    <div style="color:yellow;margin-left: -10px;font-size:18px"><b>On a practical level, that means that we need to take a good, hard look at the status of the activities that sustain us.
+      We have to evaluate where both our business and technology lie on the curve. It would be obvious to all when a company is in decline.
+  </b></div>
+  <div style="color:yellow;margin-left: -10px;font-size:18px">
+    <b>The answer is pretty simple, actually – you seek out and launch your next path to success while you’re still basking in the glow of the present moment’s achievement. Basically, you’re adding a second sigmoid onto your first. </b></div>
 
 </div>
 <br>
 <br>
 <br>
 <br>
-<br>
-<br>
 
 <div class="inner1">&#9758;
-    <a href="{% url 'welcome' %}" style="color:yellow;font-size:17px;">Welcome page</a></div>
+    <a href="{% url 'welcome' %}" style="color:yellow;font-size:17px;">Welcome page</a>, <a href="{% url 'pearl' %}" style="color:yellow;font-size:17px;">How to calculate Pearl equation with real data</a></div>
+  <script type="text/javascript" src="{% static 'main.js' %}"></script></div>
   <script type="text/javascript" src="{% static 'main.js' %}"></script>
   </body>
 </html>

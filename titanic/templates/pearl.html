@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Pearl curve</title>
+  {% load static %}
+    <link rel="stylesheet" href="{% static 'main1.css' %}">
+    <style>
+     p    {font-size:18px;}
+
+
+body{margin-left: 240px;
+
+
+}
+#background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: -1; /* Ensure div tag stays behind content; -999 might work, too. */
+}
+
+.stretch {
+    width:100%;
+    height:100%;
+}
+h1 {
+  text-shadow: 2px 2px 8px yellow;
+}
+button{indent: 20%;}
+.button4 {border-radius: 10px;}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.inner {
+margin-left: 90px;
+color:white;
+font-size:18px;
+
+}
+.inner1 {
+margin-left: 20px;
+color:white;
+font-size:16px;
+
+
+}
+
+    </style>
+  </head>
+  <body style="background-color:darkSeaGreen">
+    <div id="background">
+        <img src="{% static 'wood.jpg' %}" class="stretch" alt="" />
+    </div>
+
+    <h1 style="color:#DAE0DE;"><b>Calculations - Pearl curve</b></h1>
+<br>
+<div class="inner1">
+
+
+<div style="color:yellow;margin-left: 25px;font-size:18px"><b>The Pearl or Logistic Curve states that:</b></div>
+
+
+</div>
+<br>
+<div class="inner">
+  <img src="{% static 'curve.png' %}" alt="" style="border:2px solid green;width:320px;height:100px;">
+
+</div>
+<div class="inner1">
+<div style="color:yellow;margin-left: 25px;font-size:18px">
+    <b>L: maximum value of our quantity, for this example, the maximum orders of the
+       product .
+    </b></div>
+    <div style="color:yellow;margin-left: 25px;font-size:18px">
+        <b>t: time, for our case it is per month</b></div>
+        <div style="color:yellow;margin-left: 25px;font-size:18px">
+            <b>a,b: values that we must calculate so as to achieve the best possible calculations in order to minimize the Mean Absolute Percentage Errors.(MAPE)</b></div>
+            <div style="color:yellow;margin-left: 25px;font-size:18px">
+                <b>MAPE:we try to minimize the absolute value of the predicted values for y minus the real values, that means that we predict values close to the real.</b></div>
+              </div>
+              <div style="color:yellow;margin-left: 45px;font-size:18px">
+                  <b>In order to conclude to : y=75800/(1+ 404.4*exp(-0.306*t)), we need to find the best values for L, a, b.</b></div>
+                </div>   <br><br>
+                <div class="inner">
+                  <img src="{% static 'calc.png' %}" alt="" style="border:2px solid green;width:720px;height:360px;">
+
+                </div>
+                <br>
+                <br>
+
+<div class="inner1">
+
+  <div style="color:yellow;margin-left: 25px;font-size:18px"><b>The main logic is to guess a value for the L near to the biggest real value, for example L=16. After, you calculate a,b and with these values you predict the values of y according to the formula. Also, you fill the column F and you find the average absolute error.</b></div>
+
+    <div style="color:yellow;margin-left: 25px;font-size:18px"><b>
+    You do the same process for many values of L, greater and smaller , and you keep the values of L,a,b in case of the smallest MAPE. After that, you have ready your equation of curve.</b></div>
+</div>
+
+<br>
+
+<
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="inner1">&#9758;
+    <a href="{% url 'welcome' %}" style="color:yellow;font-size:17px;">Welcome page</a></div>
+  <script type="text/javascript" src="{% static 'main.js' %}"></script>
+  </body>
+</html>
